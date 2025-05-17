@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5s1u8da8boyb"]
+
+[ext_resource type="PackedScene" uid="uid://cwbsdyb6yfqft" path="res://Scenes/Game/InteractableObject.tscn" id="1_1jjgn"]
+[ext_resource type="Script" uid="uid://t0628mk5f6mm" path="res://Scenes/Game/battle_trigger.gd" id="2_tkc5g"]
+
+[node name="InteractableObject" instance=ExtResource("1_1jjgn")]
+script = ExtResource("2_tkc5g")

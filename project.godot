@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="CPG"
-run/main_scene="uid://b8ccjgcdxuv4u"
+run/main_scene="uid://occ6hi7y52hk"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 srun/main_scene="uid://b8ccjgcdxuv4u"
 
 [autoload]
 
-PlayerStats="*res://Scenes/Combat/PlayerStats.gd"
+PlayerStats="*res://Scripts/Combat/PlayerStats.gd"
 
 [input]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://x5qt2xtfi72p"]
 
-[ext_resource type="Script" uid="uid://c3iuojo580cpu" path="res://Scenes/Combat/battle.gd" id="1_0t7lw"]
+[ext_resource type="Script" uid="uid://c3iuojo580cpu" path="res://Scripts/Combat/battle.gd" id="1_0t7lw"]
 [ext_resource type="Texture2D" uid="uid://dwxuos5sltqd0" path="res://Assets/BACKGROUND_LIMBO.png" id="2_kiahg"]
 [ext_resource type="Resource" uid="uid://81jiwsfvv8ar" path="res://Scenes/Combat/zombie.tres" id="2_w8g4v"]
 [ext_resource type="Texture2D" uid="uid://pnbvvo4ur4ob" path="res://Assets/spr_fight_enemy_centopeia.png" id="4_ixk4w"]

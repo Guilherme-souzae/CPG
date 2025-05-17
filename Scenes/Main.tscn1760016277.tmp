@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://occ6hi7y52hk"]
+
+[ext_resource type="PackedScene" uid="uid://x5qt2xtfi72p" path="res://Scenes/Combat/battle.tscn" id="1_idj7w"]
+[ext_resource type="Script" uid="uid://e6oiyhiy06px" path="res://Scripts/main.gd" id="1_kln2b"]
+[ext_resource type="PackedScene" uid="uid://b8ccjgcdxuv4u" path="res://Scenes/Game/game.tscn" id="2_kln2b"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_kln2b")
+
+[node name="Battle" parent="." instance=ExtResource("1_idj7w")]
+process_mode = 1
+
+[node name="Game" parent="." instance=ExtResource("2_kln2b")]
+process_mode = 1
