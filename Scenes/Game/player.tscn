@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://bg10ctubma8bt"]
+[gd_scene load_steps=23 format=3 uid="uid://bg10ctubma8bt"]
 
 [ext_resource type="Script" uid="uid://cri6ax0o6xv56" path="res://Scripts/Game/player.gd" id="1_lq2ly"]
 [ext_resource type="Texture2D" uid="uid://b4f48okhr0816" path="res://Assets/sheet_prot.png" id="2_lq2ly"]
+[ext_resource type="PackedScene" uid="uid://bedvehji1ff7w" path="res://Scenes/Game/point_light_2d.tscn" id="3_sjqwj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lq2ly"]
 atlas = ExtResource("2_lq2ly")
@@ -165,6 +166,7 @@ size = Vector2(17, 31)
 radius = 0.727273
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_lq2ly")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -180,3 +182,5 @@ shape = SubResource("RectangleShape2D_lq2ly")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["player"]]
 scale = Vector2(5.5, 5.5)
 shape = SubResource("CircleShape2D_lq2ly")
+
+[node name="PointLight2D" parent="." instance=ExtResource("3_sjqwj")]
