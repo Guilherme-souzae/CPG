@@ -4,30 +4,32 @@ extends Node2D
 @onready var battle: Control = $Battle
 
 func _ready():
-	# Começa com a cena Game ativa e Battle desativada
-	game.show()
-	game.set_process(true)
+	# Configura os modos de processamento antes de qualquer operação
+	battle.process_mode = Node.PROCESS_MODE_ALWAYS  # A interface de combate sempre processa
+	game.process_mode = Node.PROCESS_MODE_INHERIT  # A cena de exploração segue o estado global
 	
-	battle.hide()
-	battle.set_process(false)
+	# Começa com a cena Game ativa e Battle desativada
+	switch_to_game()
 
 func set_active_scene(active_scene: Node):
 	# Primeiro desativa tudo
 	game.hide()
-	game.set_process(false)
-	
 	battle.hide()
-	battle.set_process(false)
 	
 	# Depois ativa apenas a cena desejada
 	active_scene.show()
-	active_scene.set_process(true)
-
-	# Ajusta a propriedade de processamento de input para Controls
+	
+	# Ajusta o estado de pausa global
+	if active_scene == battle:
+		get_tree().paused = true  # Pausa o jogo mas a batalha continua funcionando
+	else:
+		get_tree().paused = false
+		
+	# Garante que os inputs funcionem para a cena de batalha
 	if active_scene is Control:
 		active_scene.set_process_input(true)
 		active_scene.set_process_unhandled_input(true)
-		
+
 func switch_to_game():
 	set_active_scene(game)
 

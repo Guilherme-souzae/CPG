@@ -19,3 +19,7 @@ func _on_attack_pressed() -> void:
 	display_text("You attack the %s!" % enemy.name)
 	current_enemy_health = max(0, current_enemy_health-PlayerStats.attack_damage)
 	print(current_enemy_health)
+
+
+func _on_run_pressed() -> void:
+	get_node("/root/Main").switch_to_game()
