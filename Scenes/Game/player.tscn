@@ -181,3 +181,6 @@ shape = SubResource("RectangleShape2D_lq2ly")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["player"]]
 scale = Vector2(5.5, 5.5)
 shape = SubResource("CircleShape2D_lq2ly")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4.47, 4.47)
