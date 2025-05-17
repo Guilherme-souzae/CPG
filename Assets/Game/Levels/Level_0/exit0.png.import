@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bylccep8yd6s7"
-path="res://.godot/imported/light.png-2a7c25d2528b528b4775521a146eeb11.ctex"
+uid="uid://h32tm6qebgkb"
+path="res://.godot/imported/exit0.png-24d05f5745491ecf1c3c79273ce3863f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/light.png"
-dest_files=["res://.godot/imported/light.png-2a7c25d2528b528b4775521a146eeb11.ctex"]
+source_file="res://Assets/Game/Levels/Level_0/exit0.png"
+dest_files=["res://.godot/imported/exit0.png-24d05f5745491ecf1c3c79273ce3863f.ctex"]
 
 [params]
 
