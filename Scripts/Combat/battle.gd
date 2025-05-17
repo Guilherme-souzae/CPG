@@ -11,9 +11,17 @@ var isBlocking = false
 func _ready():
 	$TextBox.hide()
 	$Blackscreen.hide()
+	
+	setEnemy(enemy)
 
 func setHealth(current, maximum):
 	$PlayerPanel/PlayerData/PlayerInfo.text = "HP:%d/%d" % [current, maximum]
+	
+func setEnemy(newenemy):
+	enemy = newenemy
+	$EnemyContainer/Enemy.texture = enemy.texture
+	current_enemy_health = enemy.health
+	
 
 func display_text(text):
 	$TextBox.show()
@@ -79,9 +87,7 @@ func _on_draw() -> void:
 	$Blackscreen.show()
 	display_text(enemy.introduction)
 	await textbox_closed
-	$EnemyContainer/Enemy.texture = enemy.texture
 	$Blackscreen.hide()
 	current_player_health = PlayerStats.current_health
-	current_enemy_health = enemy.health
 	
 	setHealth(current_player_health, PlayerStats.max_health)
