@@ -1,9 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://x5qt2xtfi72p"]
+[gd_scene load_steps=12 format=3 uid="uid://x5qt2xtfi72p"]
 
 [ext_resource type="Script" uid="uid://c3iuojo580cpu" path="res://Scripts/Combat/battle.gd" id="1_0t7lw"]
 [ext_resource type="Resource" uid="uid://dp321j5buomfk" path="res://Scenes/Combat/Enemies/centipede.tres" id="2_ixk4w"]
 [ext_resource type="Texture2D" uid="uid://dwxuos5sltqd0" path="res://Assets/BACKGROUND_LIMBO.png" id="2_kiahg"]
 [ext_resource type="Texture2D" uid="uid://pnbvvo4ur4ob" path="res://Assets/spr_fight_enemy_centopeia.png" id="4_ixk4w"]
+[ext_resource type="Texture2D" uid="uid://bhltp55v2ruvw" path="res://Assets/Prometheus_perfil.png" id="5_3rw4r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6gacv"]
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5d35m"]
 bg_color = Color(0, 0, 0, 1)
@@ -54,6 +58,17 @@ grow_vertical = 2
 script = ExtResource("1_0t7lw")
 enemy = ExtResource("2_ixk4w")
 
+[node name="Blackscreen" type="Panel" parent="."]
+top_level = true
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6gacv")
+
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 offset_right = 1152.0
@@ -66,8 +81,8 @@ custom_minimum_size = Vector2(449, 449)
 layout_mode = 0
 offset_left = 354.0
 offset_top = 1.0
-offset_right = 803.0
-offset_bottom = 450.0
+offset_right = 1150.0
+offset_bottom = 650.0
 
 [node name="Enemy" type="TextureRect" parent="EnemyContainer"]
 layout_mode = 2
@@ -76,36 +91,38 @@ expand_mode = 2
 
 [node name="PlayerPanel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 112.0
-offset_top = 450.0
+offset_left = 182.0
+offset_top = 449.0
 offset_right = 356.0
 offset_bottom = 652.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_5d35m")
 
 [node name="PlayerData" type="VBoxContainer" parent="PlayerPanel"]
 layout_mode = 0
-offset_right = 242.0
-offset_bottom = 202.0
+offset_top = 1.0
+offset_right = 173.0
+offset_bottom = 201.0
 
 [node name="PlayerInfo" type="Label" parent="PlayerPanel/PlayerData"]
 layout_mode = 2
-text = "Health X/Y
-Ember X/Y"
+text = "Health X/Y"
 
 [node name="PlayerImage" type="TextureRect" parent="PlayerPanel/PlayerData"]
 layout_mode = 2
+texture = ExtResource("5_3rw4r")
+expand_mode = 4
 
 [node name="ActionPanel" type="Panel" parent="."]
 layout_mode = 0
 offset_top = 450.0
-offset_right = 112.0
+offset_right = 182.0
 offset_bottom = 652.0
 
 [node name="PlayerActions" type="VBoxContainer" parent="ActionPanel"]
 layout_mode = 0
 offset_left = 1.0
-offset_top = 1.0
-offset_right = 113.0
+offset_top = -1.0
+offset_right = 182.0
 offset_bottom = 202.0
 
 [node name="Attack" type="Button" parent="ActionPanel/PlayerActions"]
@@ -127,8 +144,9 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ixk4w")
 text = "Run"
 
 [node name="TextBox" type="Panel" parent="."]
+z_index = 2
 layout_mode = 0
-offset_left = 356.0
+offset_left = 1.0
 offset_top = 449.0
 offset_right = 1150.0
 offset_bottom = 652.0
@@ -139,7 +157,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = 8.0
+offset_top = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Text goes here"
