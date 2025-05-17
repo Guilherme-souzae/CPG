@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dp321j5buomfk"]
+
+[ext_resource type="Script" uid="uid://bj0qjorwm0jj6" path="res://Scenes/Combat/BaseEnemy.gd" id="1_ma6l5"]
+[ext_resource type="Texture2D" uid="uid://pnbvvo4ur4ob" path="res://Assets/spr_fight_enemy_centopeia.png" id="2_e17c8"]
+
+[resource]
+script = ExtResource("1_ma6l5")
+name = "centopeia"
+texture = ExtResource("2_e17c8")
+health = 40
+attack = 12

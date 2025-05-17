@@ -1,0 +1,128 @@
+[gd_scene load_steps=9 format=3 uid="uid://x5qt2xtfi72p"]
+
+[ext_resource type="Script" uid="uid://c3iuojo580cpu" path="res://Scenes/Combat/battle.gd" id="1_0t7lw"]
+[ext_resource type="Texture2D" uid="uid://dwxuos5sltqd0" path="res://Assets/BACKGROUND_LIMBO.png" id="2_kiahg"]
+[ext_resource type="Resource" uid="uid://81jiwsfvv8ar" path="res://Scenes/Combat/zombie.tres" id="2_w8g4v"]
+[ext_resource type="Texture2D" uid="uid://pnbvvo4ur4ob" path="res://Assets/spr_fight_enemy_centopeia.png" id="4_ixk4w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kiahg"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8g4v"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ixk4w"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3rw4r"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[node name="Battle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0t7lw")
+enemy = ExtResource("2_w8g4v")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_kiahg")
+expand_mode = 1
+
+[node name="Enemy" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 311.0
+offset_top = 2.0
+offset_right = 769.0
+offset_bottom = 449.0
+texture = ExtResource("4_ixk4w")
+expand_mode = 1
+
+[node name="PlayerPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayerData" type="VBoxContainer" parent="PlayerPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayerInfo" type="Label" parent="PlayerPanel/PlayerData"]
+layout_mode = 2
+
+[node name="PlayerImage" type="TextureRect" parent="PlayerPanel/PlayerData"]
+layout_mode = 2
+
+[node name="ActionPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayerActions" type="VBoxContainer" parent="ActionPanel"]
+layout_mode = 0
+offset_top = 449.0
+offset_right = 356.0
+offset_bottom = 647.0
+
+[node name="Attack" type="Button" parent="ActionPanel/PlayerActions"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_kiahg")
+text = "Attack"
+
+[node name="Block" type="Button" parent="ActionPanel/PlayerActions"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_w8g4v")
+text = "Block"
+
+[node name="Run" type="Button" parent="ActionPanel/PlayerActions"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_ixk4w")
+text = "Run"
+
+[node name="TextBox" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 449.0
+offset_right = 1150.0
+offset_bottom = 644.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3rw4r")
+
+[node name="Label" type="Label" parent="TextBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Text goes here"
+
+[connection signal="pressed" from="ActionPanel/PlayerActions/Attack" to="." method="_on_attack_pressed"]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8ccjgcdxuv4u"]
+
+[ext_resource type="PackedScene" uid="uid://cwbsdyb6yfqft" path="res://Scenes/Game/InteractableObject.tscn" id="1_qxfds"]
+[ext_resource type="PackedScene" uid="uid://bg10ctubma8bt" path="res://Scenes/Game/player.tscn" id="2_qikps"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_qikps")]
+
+[node name="InteractableObject" parent="." instance=ExtResource("1_qxfds")]
+position = Vector2(225, 185)

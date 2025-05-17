@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwbsdyb6yfqft"]
+
+[ext_resource type="Script" uid="uid://xfx1yfwoo0hi" path="res://Scripts/Game/interactable_object.gd" id="1_ms4dp"]
+[ext_resource type="Texture2D" uid="uid://c7o3tyxwbdkq2" path="res://icon.svg" id="1_ur4n5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ms4dp"]
+
+[node name="InteractableObject" type="Area2D"]
+script = ExtResource("1_ms4dp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ur4n5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(5.3107, 5.24601)
+shape = SubResource("RectangleShape2D_ms4dp")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
