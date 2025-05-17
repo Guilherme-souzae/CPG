@@ -59,6 +59,7 @@ script = ExtResource("1_0t7lw")
 enemy = ExtResource("2_ixk4w")
 
 [node name="Blackscreen" type="Panel" parent="."]
+visible = false
 top_level = true
 z_index = 1
 layout_mode = 1
@@ -92,20 +93,24 @@ expand_mode = 2
 [node name="PlayerPanel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 182.0
-offset_top = 449.0
-offset_right = 356.0
+offset_top = 411.0
+offset_right = 369.0
 offset_bottom = 652.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_5d35m")
 
 [node name="PlayerData" type="VBoxContainer" parent="PlayerPanel"]
 layout_mode = 0
 offset_top = 1.0
-offset_right = 173.0
-offset_bottom = 201.0
+offset_right = 187.0
+offset_bottom = 244.0
 
-[node name="PlayerInfo" type="Label" parent="PlayerPanel/PlayerData"]
+[node name="PlayerHPLabel" type="Label" parent="PlayerPanel/PlayerData"]
 layout_mode = 2
-text = "Health X/Y"
+text = "HP: X/Y"
+
+[node name="PlayerEmbersLabel" type="Label" parent="PlayerPanel/PlayerData"]
+layout_mode = 2
+text = "Embers:X/Y"
 
 [node name="PlayerImage" type="TextureRect" parent="PlayerPanel/PlayerData"]
 layout_mode = 2
@@ -114,7 +119,7 @@ expand_mode = 4
 
 [node name="ActionPanel" type="Panel" parent="."]
 layout_mode = 0
-offset_top = 450.0
+offset_top = 412.0
 offset_right = 182.0
 offset_bottom = 652.0
 
@@ -123,7 +128,7 @@ layout_mode = 0
 offset_left = 1.0
 offset_top = -1.0
 offset_right = 182.0
-offset_bottom = 202.0
+offset_bottom = 240.0
 
 [node name="Attack" type="Button" parent="ActionPanel/PlayerActions"]
 layout_mode = 2
@@ -135,7 +140,7 @@ text = "Attack"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_w8g4v")
-text = "Block"
+text = "Dodge"
 
 [node name="Run" type="Button" parent="ActionPanel/PlayerActions"]
 layout_mode = 2
@@ -144,6 +149,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ixk4w")
 text = "Run"
 
 [node name="TextBox" type="Panel" parent="."]
+visible = false
 z_index = 2
 layout_mode = 0
 offset_left = 1.0

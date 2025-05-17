@@ -5,6 +5,7 @@ signal textbox_closed
 @export var enemy: Resource = null
 
 var current_player_health = 0
+var current_player_embers = 0
 var current_enemy_health = 0
 var isBlocking = false
 
@@ -15,7 +16,9 @@ func _ready():
 	setEnemy(enemy)
 
 func setHealth(current, maximum):
-	$PlayerPanel/PlayerData/PlayerInfo.text = "HP:%d/%d" % [current, maximum]
+	$PlayerPanel/PlayerData/PlayerHPLabel.text = "HP:%d/%d" % [current, maximum]
+func setEmbers(current, maximum):
+	$PlayerPanel/PlayerData/PlayerEmbersLabel.text = "Embers:%d/%d" % [current, maximum]
 	
 func setEnemy(newenemy):
 	enemy = newenemy
@@ -56,6 +59,8 @@ func _on_block_pressed() -> void:
 	enemyTurn()
 
 func _on_run_pressed() -> void:
+	PlayerStats.current_health = current_player_health
+	PlayerStats.current_embers = current_player_embers
 	display_text("Escapou com sucesso.")
 	await textbox_closed
 	get_node("/root/Main").switch_to_game()
@@ -85,9 +90,13 @@ func enemyTurn():
 func _on_draw() -> void:
 	print("I entered the combat.")
 	$Blackscreen.show()
+	current_player_health = PlayerStats.current_health
+	current_player_embers = PlayerStats.current_embers
+	setHealth(current_player_health, PlayerStats.max_health)
+	setEmbers(current_player_embers, PlayerStats.max_embers)
 	display_text(enemy.introduction)
 	await textbox_closed
 	$Blackscreen.hide()
-	current_player_health = PlayerStats.current_health
+	
 	
 	setHealth(current_player_health, PlayerStats.max_health)
