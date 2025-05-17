@@ -1,9 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://x5qt2xtfi72p"]
+[gd_scene load_steps=10 format=3 uid="uid://x5qt2xtfi72p"]
 
 [ext_resource type="Script" uid="uid://c3iuojo580cpu" path="res://Scripts/Combat/battle.gd" id="1_0t7lw"]
-[ext_resource type="Resource" uid="uid://dp321j5buomfk" path="res://Scenes/Combat/centipede.tres" id="2_ixk4w"]
+[ext_resource type="Resource" uid="uid://dp321j5buomfk" path="res://Scenes/Combat/Enemies/centipede.tres" id="2_ixk4w"]
 [ext_resource type="Texture2D" uid="uid://dwxuos5sltqd0" path="res://Assets/BACKGROUND_LIMBO.png" id="2_kiahg"]
 [ext_resource type="Texture2D" uid="uid://pnbvvo4ur4ob" path="res://Assets/spr_fight_enemy_centopeia.png" id="4_ixk4w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5d35m"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kiahg"]
 bg_color = Color(0, 0, 0, 1)
@@ -69,30 +76,37 @@ expand_mode = 2
 
 [node name="PlayerPanel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 112.0
+offset_top = 450.0
+offset_right = 356.0
+offset_bottom = 652.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5d35m")
 
 [node name="PlayerData" type="VBoxContainer" parent="PlayerPanel"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 242.0
+offset_bottom = 202.0
 
 [node name="PlayerInfo" type="Label" parent="PlayerPanel/PlayerData"]
 layout_mode = 2
+text = "Health X/Y
+Ember X/Y"
 
 [node name="PlayerImage" type="TextureRect" parent="PlayerPanel/PlayerData"]
 layout_mode = 2
 
 [node name="ActionPanel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_top = 450.0
+offset_right = 112.0
+offset_bottom = 652.0
 
 [node name="PlayerActions" type="VBoxContainer" parent="ActionPanel"]
 layout_mode = 0
-offset_top = 449.0
-offset_right = 356.0
-offset_bottom = 647.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 113.0
+offset_bottom = 202.0
 
 [node name="Attack" type="Button" parent="ActionPanel/PlayerActions"]
 layout_mode = 2
@@ -117,7 +131,7 @@ layout_mode = 0
 offset_left = 356.0
 offset_top = 449.0
 offset_right = 1150.0
-offset_bottom = 644.0
+offset_bottom = 652.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_3rw4r")
 
 [node name="Label" type="Label" parent="TextBox"]
@@ -125,9 +139,12 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Text goes here"
+autowrap_mode = 3
 
 [connection signal="pressed" from="ActionPanel/PlayerActions/Attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="ActionPanel/PlayerActions/Block" to="." method="_on_block_pressed"]
 [connection signal="pressed" from="ActionPanel/PlayerActions/Run" to="." method="_on_run_pressed"]

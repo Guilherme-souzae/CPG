@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dp321j5buomfk"]
+
+[ext_resource type="Script" uid="uid://bj0qjorwm0jj6" path="res://Scripts/Combat/BaseEnemy.gd" id="1_ag8jl"]
+[ext_resource type="Texture2D" uid="uid://pnbvvo4ur4ob" path="res://Assets/spr_fight_enemy_centopeia.png" id="2_rnvnt"]
+
+[resource]
+script = ExtResource("1_ag8jl")
+name = "Centopeia"
+introduction = "A centopeia rasteja para fora da sua escuridão, uma míriade de patas, uma para cada um de seus pecados."
+idle = "A centopeia encara o fundo dos seus olhos, vendo por trás de suas mentiras."
+texture = ExtResource("2_rnvnt")
+health = 40
+attack = 12
+evasion = 2
