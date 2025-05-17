@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5k7angn5tagn"]
+
+[ext_resource type="PackedScene" uid="uid://b8ccjgcdxuv4u" path="res://Scenes/Game/levels/game.tscn" id="1_xqpw6"]
+[ext_resource type="PackedScene" uid="uid://bg10ctubma8bt" path="res://Scenes/Game/player.tscn" id="2_1aeop"]
+[ext_resource type="PackedScene" uid="uid://bprmd18xeulib" path="res://Scenes/Game/level_changer.tscn" id="3_8ikyt"]
+[ext_resource type="PackedScene" uid="uid://cgev71nk2du1f" path="res://Scenes/Game/levels/game_1.tscn" id="4_aneho"]
+
+[node name="Game" instance=ExtResource("1_xqpw6")]
+
+[node name="Player" parent="." index="0" instance=ExtResource("2_1aeop")]
+position = Vector2(50, 26)
+
+[node name="InteractableObject" parent="." index="1" instance=ExtResource("3_8ikyt")]
+position = Vector2(198, 231)
+next_level = ExtResource("4_aneho")
