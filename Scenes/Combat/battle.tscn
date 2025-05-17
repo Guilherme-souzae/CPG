@@ -163,6 +163,7 @@ grow_vertical = 2
 text = "Text goes here"
 autowrap_mode = 3
 
+[connection signal="draw" from="." to="." method="_on_draw"]
 [connection signal="pressed" from="ActionPanel/PlayerActions/Attack" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="ActionPanel/PlayerActions/Block" to="." method="_on_block_pressed"]
 [connection signal="pressed" from="ActionPanel/PlayerActions/Run" to="." method="_on_run_pressed"]

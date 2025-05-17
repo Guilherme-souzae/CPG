@@ -9,19 +9,8 @@ var current_enemy_health = 0
 var isBlocking = false
 
 func _ready():
-	
 	$TextBox.hide()
 	$Blackscreen.hide()
-	
-	$Blackscreen.show()
-	display_text(enemy.introduction)
-	await textbox_closed
-	$EnemyContainer/Enemy.texture = enemy.texture
-	$Blackscreen.hide()
-	current_player_health = PlayerStats.current_health
-	current_enemy_health = enemy.health
-	
-	setHealth(current_player_health, PlayerStats.max_health)
 
 func setHealth(current, maximum):
 	$PlayerPanel/PlayerData/PlayerInfo.text = "HP:%d/%d" % [current, maximum]
@@ -84,3 +73,15 @@ func enemyTurn():
 		display_text(enemy.miss)
 		await textbox_closed
 	isBlocking = false
+ 
+func _on_draw() -> void:
+	print("I entered the combat.")
+	$Blackscreen.show()
+	display_text(enemy.introduction)
+	await textbox_closed
+	$EnemyContainer/Enemy.texture = enemy.texture
+	$Blackscreen.hide()
+	current_player_health = PlayerStats.current_health
+	current_enemy_health = enemy.health
+	
+	setHealth(current_player_health, PlayerStats.max_health)
