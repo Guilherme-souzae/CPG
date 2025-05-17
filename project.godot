@@ -20,6 +20,10 @@ srun/main_scene="uid://b8ccjgcdxuv4u"
 
 PlayerStats="*res://Scripts/Combat/PlayerStats.gd"
 
+[global_group]
+
+player=""
+
 [input]
 
 move_right={

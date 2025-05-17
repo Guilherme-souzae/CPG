@@ -164,7 +164,7 @@ size = Vector2(17, 31)
 [sub_resource type="CircleShape2D" id="CircleShape2D_lq2ly"]
 radius = 0.727273
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 1
 script = ExtResource("1_lq2ly")
 
@@ -183,4 +183,4 @@ scale = Vector2(5.5, 5.5)
 shape = SubResource("CircleShape2D_lq2ly")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4.47, 4.47)
+zoom = Vector2(3.195, 3.195)
