@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://i8gjhvpji8mv"]
 
 [ext_resource type="PackedScene" uid="uid://bprmd18xeulib" path="res://Scenes/Game/Props/level_changer.tscn" id="1_3f365"]
-[ext_resource type="PackedScene" uid="uid://68ecbqhs0o" path="res://Scenes/Game/levels/game_1.tscn" id="2_68j0l"]
+[ext_resource type="PackedScene" uid="uid://blbqdknd0l2v7" path="res://Scenes/Game/levels/game_1.tscn" id="2_68j0l"]
 [ext_resource type="Texture2D" uid="uid://h32tm6qebgkb" path="res://Assets/Game/Levels/Level_0/exit0.png" id="2_70dko"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_68j0l"]

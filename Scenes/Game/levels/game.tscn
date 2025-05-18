@@ -11,4 +11,4 @@ script = ExtResource("1_t0fhs")
 [node name="MessageLabel" type="Label" parent="UI"]
 offset_right = 40.0
 offset_bottom = 23.0
-scale = Vector2(5.94614, 5.97944)
+scale = Vector2(2.361, 2.374)

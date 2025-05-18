@@ -10,6 +10,7 @@ size = Vector2(49, 30)
 size = Vector2(60, 72)
 
 [node name="InteractableObject" instance=ExtResource("1_m5gjr")]
+frase = "Uma antiga torre em pedaços"
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_clnp5")
