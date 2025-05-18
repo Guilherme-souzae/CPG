@@ -5,19 +5,21 @@
 
 [resource]
 script = ExtResource("1_le243")
-name = "Zombie"
-introduction = "A zombie approaches"
-death = "Zombie slain."
-hit = "The zombie punches you!"
-brutal = "The zombie Bites you!"
-miss = "zombie trips and falls"
-hurt = "zombie gets hit"
-crippled = "zombie loses an arm!"
-dodge = "zombie dodges your strike"
+name = "perdido"
+introduction = "Um ser humano ferido, putrefado e com dentes afiados se aproxima de você..."
+death = "O zumbi fica imóvel desta vez para sempre."
+hit = "Unhas perfuram seu peito, espero que não infecte você"
+brutal = "Você sente os dedos da criatura atravessando seus órgãos, ainda bem que você já está acostumado não é mesmo PROMETEUS?"
+miss = "O zumbi cambaleia e erra seu ataque."
+hurt = "A criatura aparenta não sentir mas é visível que você a feriu"
+crippled = "A criatura mesmo sem nervos cai no chão quase como se contorcesse de dor, é estranhamente humano..."
+dodge = "Você não consegue prever aquilo que não pensa e logo, erra."
 texture = ExtResource("2_rjjik")
 health = 50
-attack = 5
+attack = 100
 margin = 0
-accuracy = 12
+accuracy = 100
 evasion = 5
+reward = 10
+runchance = 15
 special_move = "bite"

@@ -12,6 +12,8 @@ func _ready():
 	$DetectionArea.connect("body_entered", Callable(self, "_on_DetectionArea_body_entered"))
 	$DetectionArea.connect("body_exited", Callable(self, "_on_DetectionArea_body_exited"))
 	$CombatArea.connect("body_entered", Callable(self, "_on_CombatArea_body_entered"))
+	Global.connect("combat_ran", Callable(self, "_on_combat_ran"))
+	Global.connect("combat_won", Callable(self, "_on_combat_won"))
 
 func _physics_process(delta):
 	if target and can_see_player:
@@ -52,4 +54,13 @@ func _on_CombatArea_body_entered(body):
 		print("o monstro te pegou")
 		get_node("/root/Main/Battle").setEnemy(enemyData)
 		get_node("/root/Main").switch_to_battle()
-		queue_free()
+
+func _on_combat_ran():
+	get_node("CombatArea/CollisionShape2D").disabled = true
+	get_node("DetectionArea/CollisionShape2D").disabled = true
+	$RunTimer.start(1.0)
+	await $RunTimer.timeout
+	get_node("CombatArea/CollisionShape2D").disabled = false
+	get_node("DetectionArea/CollisionShape2D").disabled = false
+func _on_combat_won():
+	queue_free()

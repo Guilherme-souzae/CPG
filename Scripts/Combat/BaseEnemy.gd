@@ -15,4 +15,6 @@ extends Resource
 @export var margin: int = 0
 @export var accuracy: int = 20
 @export var evasion: int = 0
+@export var reward: int = 0
+@export var runchance: int = 20
 @export var special_move: String = "None"

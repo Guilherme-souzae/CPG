@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://x5qt2xtfi72p"]
+[gd_scene load_steps=18 format=3 uid="uid://x5qt2xtfi72p"]
 
 [ext_resource type="Script" uid="uid://c3iuojo580cpu" path="res://Scripts/Combat/battle.gd" id="1_0t7lw"]
-[ext_resource type="Resource" uid="uid://mb8o70wjl5ha" path="res://Scenes/Combat/Enemies/gargoyle.tres" id="2_6gacv"]
+[ext_resource type="Resource" uid="uid://81jiwsfvv8ar" path="res://Scenes/Combat/Enemies/zombie.tres" id="2_5d35m"]
 [ext_resource type="Texture2D" uid="uid://dwxuos5sltqd0" path="res://Assets/BACKGROUND_LIMBO.png" id="2_kiahg"]
 [ext_resource type="Texture2D" uid="uid://f7vq135rxqau" path="res://Assets/deathmessage.png" id="3_6gacv"]
+[ext_resource type="PackedScene" uid="uid://by1yb4ycusxc7" path="res://Scenes/Game/Enemies/base_enemy.tscn" id="3_mjpwh"]
 [ext_resource type="Texture2D" uid="uid://dl45ve1jqvqwk" path="res://Assets/lost.png" id="4_3rw4r"]
 [ext_resource type="Texture2D" uid="uid://bhltp55v2ruvw" path="res://Assets/Prometheus_perfil.png" id="5_3rw4r"]
 [ext_resource type="Texture2D" uid="uid://bhy85smv8ubkf" path="res://Assets/spr_battlebox.png" id="6_5d35m"]
@@ -118,7 +119,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0t7lw")
-enemy = ExtResource("2_6gacv")
+enemy = ExtResource("2_5d35m")
+ai = ExtResource("3_mjpwh")
 
 [node name="Blackscreen" type="Panel" parent="."]
 top_level = true

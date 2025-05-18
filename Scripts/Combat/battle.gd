@@ -1,6 +1,8 @@
 extends Control
 
 signal textbox_closed
+signal enemy_dead
+signal player_dead
 
 @export var enemy: Resource = null
 
@@ -14,6 +16,7 @@ func _ready():
 	$TextBox.hide()
 	$Blackscreen.hide()
 	$Background.show()
+	$Deathscreen.hide()
 	
 	setEnemy(enemy)
 
@@ -55,6 +58,11 @@ func _on_attack_pressed() -> void:
 		$PlayerPanel.show()
 		$ActionPanel.show()
 		current_enemy_health = max(0, current_enemy_health-(2*PlayerStats.attack_damage))
+		if (current_enemy_health == 0):
+			emit_signal("enemy_dead")
+		else:
+			enemyTurn()
+			pass
 		print(current_enemy_health)
 	elif ( attackroll < PlayerStats.accuracy-enemy.evasion):
 		$PlayerPanel.hide()
@@ -66,6 +74,11 @@ func _on_attack_pressed() -> void:
 		$PlayerPanel.show()
 		$ActionPanel.show()
 		current_enemy_health = max(0, current_enemy_health-PlayerStats.attack_damage)
+		if (current_enemy_health == 0):
+			emit_signal("enemy_dead")
+		else:
+			enemyTurn()
+			print("ded")
 		print(current_enemy_health)
 	else:
 		display_text(enemy.dodge)
@@ -74,20 +87,33 @@ func _on_attack_pressed() -> void:
 		await textbox_closed
 		$PlayerPanel.show()
 		$ActionPanel.show()
-	enemyTurn()
+		enemyTurn()
+
 
 func _on_block_pressed() -> void:
 	isBlocking = true
 	enemyTurn()
 
 func _on_run_pressed() -> void:
-	PlayerStats.current_health = current_player_health
-	PlayerStats.current_embers = current_player_embers
-	display_text("Escapou com sucesso.")
-	$PlayerPanel.hide()
-	$ActionPanel.hide()
-	await textbox_closed
-	get_node("/root/Main").switch_to_game()
+	var runroll = randi()%20
+	if (runroll<enemy.runchance):
+		PlayerStats.current_health = current_player_health
+		PlayerStats.current_embers = current_player_embers
+		PlayerStats.update()
+		display_text("Existe escapatória.")
+		$PlayerPanel.hide()
+		$ActionPanel.hide()
+		await textbox_closed
+		Global.signal_end_combat(false)
+		get_node("/root/Main").switch_to_game()
+	else:
+		$PlayerPanel.hide()
+		$ActionPanel.hide()
+		display_text("Falha ao tentar escapar, será que há escapatória?")
+		await textbox_closed
+		$PlayerPanel.show()
+		$ActionPanel.show()
+		enemyTurn()
 
 func enemyTurn():
 	var actionroll = randi()%20
@@ -108,6 +134,8 @@ func enemyTurn():
 			$PlayerPanel.show()
 			$ActionPanel.show()
 			current_player_health = max(0, current_player_health-(2*enemy.attack))
+			if (current_player_health == 0):
+				emit_signal("player_dead")
 			setHealth(current_player_health, PlayerStats.max_health)
 		elif (enemyroll < hitChance):
 			current_player_health = max(0, current_player_health-enemy.attack)
@@ -118,6 +146,8 @@ func enemyTurn():
 			$PlayerPanel.show()
 			$ActionPanel.show()
 			setHealth(current_player_health, PlayerStats.max_health)
+			if (current_player_health == 0):
+				emit_signal("player_dead")
 		else:
 			display_text(enemy.miss)
 			$PlayerPanel.hide()
@@ -229,10 +259,17 @@ func specialActions(attackroll, hitchance):
 			await textbox_closed
 			$PlayerPanel.show()
 			$ActionPanel.show()
+	if (current_enemy_health == 0):
+		emit_signal("enemy_dead")
+	elif (current_player_health == 0):
+		emit_signal("player_dead")
+	
 
 func _on_draw() -> void:
 	print("I entered the combat.")
+	$Deathscreen.hide()
 	$Blackscreen.show()
+	PlayerStats.update()
 	current_player_health = PlayerStats.current_health
 	current_player_embers = PlayerStats.current_embers
 	setHealth(current_player_health, PlayerStats.max_health)
@@ -240,6 +277,31 @@ func _on_draw() -> void:
 	display_text(enemy.introduction)
 	await textbox_closed
 	$Blackscreen.hide()
-	
+	$PlayerPanel.show()
+	$ActionPanel.show()
 	
 	setHealth(current_player_health, PlayerStats.max_health)
+
+
+func _on_enemy_dead() -> void:
+	PlayerStats.current_health = current_player_health
+	PlayerStats.current_embers = current_player_embers + enemy.reward
+	$Blackscreen.show()
+	display_text(enemy.death)
+	$PlayerPanel.hide()
+	$ActionPanel.hide()
+	await textbox_closed
+	$Blackscreen.hide()
+	$PlayerPanel.show()
+	$ActionPanel.show()
+	Global.signal_end_combat(true)
+	get_node("/root/Main").switch_to_game()
+
+
+func _on_player_dead() -> void:
+	$Deathscreen.show()
+	$PlayerPanel.hide()
+	$ActionPanel.hide()
+	await textbox_closed
+	get_node("/root/Main").switch_to_game() #Placeholder
+	

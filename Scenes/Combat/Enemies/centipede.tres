@@ -5,9 +5,9 @@
 
 [resource]
 script = ExtResource("1_ag8jl")
-name = "Centopeia"
+name = "centopeia"
 introduction = "A centopeia rasteja para fora da sua escuridão, uma míriade de patas, uma para cada um de seus pecados."
-death = "Enemy Dies!"
+death = "Finalmente a centopeia morre, e seu pescoço continua inteiro."
 hit = "Patas afiadas como laminas te alvejam."
 brutal = "Uma pata atravessa o seu ombro..."
 miss = "A criatura falha assim como você..."
@@ -15,9 +15,11 @@ hurt = "A centopeia grita de dor"
 crippled = "É visível o ódio em seus olhos, essa doeu!"
 dodge = "Ela é incrívelmente difícil de acertar para o seu tamanho."
 texture = ExtResource("2_rnvnt")
-health = 50
+health = 5
 attack = 12
 margin = 1
 accuracy = 15
 evasion = 2
+reward = 25
+runchance = 10
 special_move = "decapitate"

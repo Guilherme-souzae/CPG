@@ -5,19 +5,21 @@
 
 [resource]
 script = ExtResource("1_v1c4c")
-name = "Enemy Name"
-introduction = "Enemy Introduction"
-death = "Enemy Dies!"
-hit = "Enemy Hits you."
-brutal = "Enemy lands a Brutal Hit..."
-miss = "The Enemy Missed"
-hurt = "Enemy is Hurt."
-crippled = "Enemy go hit by a Brutal Hit!"
-dodge = "Enemy Dodges."
+name = "coelho"
+introduction = "Um coelho?"
+death = "O coelho está morto, mas por que?"
+hit = "O coelho te morde desesperado, mas como ele conseguiu?"
+brutal = "O coelho morde você determinado a sobreviver, se tentar fugir ele te deixará."
+miss = "O coelho está amedrontado demais para te atacar..."
+hurt = "O coelho urra de dor, afinal ele é indefeso..."
+crippled = "O coelho é destroçado por você, a culpa é toda sua..."
+dodge = "o coelho arisco desvia de seu agressor."
 texture = ExtResource("2_v0wer")
 health = 10
 attack = 1
 margin = 0
 accuracy = 6
 evasion = 15
+reward = -100
+runchance = 20
 special_move = "none"

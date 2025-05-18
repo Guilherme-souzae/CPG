@@ -19,6 +19,7 @@ srun/main_scene="uid://b8ccjgcdxuv4u"
 [autoload]
 
 PlayerStats="*res://Scripts/Combat/PlayerStats.gd"
+Global="*res://Scripts/Global.gd"
 
 [global_group]
 
