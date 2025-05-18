@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="CPG"
-run/main_scene="uid://occ6hi7y52hk"
+run/main_scene="uid://co5oae2b44oiw"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 srun/main_scene="uid://b8ccjgcdxuv4u"
