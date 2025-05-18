@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5216jlb03vix"]
+
+[ext_resource type="PackedScene" uid="uid://cwbsdyb6yfqft" path="res://Scenes/Game/Props/InteractableObject.tscn" id="1_p1ln8"]
+[ext_resource type="Texture2D" uid="uid://c83jtmaf45x0c" path="res://Assets/Game/Levels/Level1/faceless.png" id="2_ll42y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mlks"]
+size = Vector2(20, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uq75c"]
+size = Vector2(31, 28)
+
+[node name="InteractableObject" instance=ExtResource("1_p1ln8")]
+frase = "Uma estatua sem face"
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_ll42y")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_5mlks")
+
+[node name="DetectionShape2D" parent="Area2D" index="0"]
+position = Vector2(-0.5, 10)
+shape = SubResource("RectangleShape2D_uq75c")

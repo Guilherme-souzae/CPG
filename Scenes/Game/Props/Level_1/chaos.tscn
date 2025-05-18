@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://jw6idydg8ald"]
+
+[ext_resource type="PackedScene" uid="uid://cwbsdyb6yfqft" path="res://Scenes/Game/Props/InteractableObject.tscn" id="1_y5837"]
+[ext_resource type="Texture2D" uid="uid://cj486uwtaj4ev" path="res://Assets/Game/Levels/Level1/chaos.png" id="2_kjhgu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpiwq"]
+size = Vector2(9, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pkt46"]
+size = Vector2(36, 37)
+
+[node name="InteractableObject" instance=ExtResource("1_y5837")]
+frase = "Uma estatua bizarra, parece zombar de você"
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_kjhgu")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(-2.5, 10.5)
+shape = SubResource("RectangleShape2D_fpiwq")
+
+[node name="DetectionShape2D" parent="Area2D" index="0"]
+position = Vector2(-1, 11.5)
+shape = SubResource("RectangleShape2D_pkt46")

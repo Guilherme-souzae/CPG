@@ -475,50 +475,52 @@ position = Vector2(-371, 32)
 shape = SubResource("WorldBoundaryShape2D_o4386")
 
 [node name="InteractableObject" parent="." index="3" instance=ExtResource("4_on6ef")]
+z_index = 2
 position = Vector2(-67, 454)
 
 [node name="InteractableObject2" parent="." index="4" instance=ExtResource("4_on6ef")]
+z_index = 2
 position = Vector2(-30, 285)
 
 [node name="InteractableObject3" parent="." index="5" instance=ExtResource("4_on6ef")]
+z_index = 2
 position = Vector2(-44, 59)
 
 [node name="InteractableObject4" parent="." index="6" instance=ExtResource("4_on6ef")]
+z_index = 2
 position = Vector2(317, 30)
 
 [node name="InteractableObject5" parent="." index="7" instance=ExtResource("4_on6ef")]
+z_index = 2
 position = Vector2(330, 269)
 
 [node name="InteractableObject6" parent="." index="8" instance=ExtResource("4_on6ef")]
+z_index = 2
 position = Vector2(383, 460)
 
 [node name="InteractableObject7" parent="." index="9" instance=ExtResource("5_xuasg")]
+z_index = 2
 position = Vector2(668, 37)
 
-[node name="InteractableObject8" parent="." index="10" instance=ExtResource("4_on6ef")]
-position = Vector2(615, 44)
-
-[node name="InteractableObject9" parent="." index="11" instance=ExtResource("4_on6ef")]
-position = Vector2(716, 44)
-
-[node name="InteractableObject10" parent="." index="12" instance=ExtResource("6_wam37")]
+[node name="InteractableObject10" parent="." index="10" instance=ExtResource("6_wam37")]
+z_index = 2
 position = Vector2(-180, 131)
 scale = Vector2(1.56387, 1.47156)
 
-[node name="InteractableObject11" parent="." index="13" instance=ExtResource("7_djrqv")]
+[node name="InteractableObject11" parent="." index="11" instance=ExtResource("7_djrqv")]
 z_index = 2
 position = Vector2(500, 222)
 scale = Vector2(1.96, 2.2)
 
-[node name="InteractableObject12" parent="." index="14" instance=ExtResource("8_e668a")]
+[node name="InteractableObject12" parent="." index="12" instance=ExtResource("8_e668a")]
 position = Vector2(422, 581)
 
-[node name="InteractableObject13" parent="." index="15" instance=ExtResource("9_2hoxu")]
+[node name="InteractableObject13" parent="." index="13" instance=ExtResource("9_2hoxu")]
 position = Vector2(-151, 576)
 
-[node name="InteractableObject14" parent="." index="16" instance=ExtResource("10_xuasg")]
+[node name="InteractableObject14" parent="." index="14" instance=ExtResource("10_xuasg")]
 position = Vector2(132, -140)
 scale = Vector2(1.70904, 1.705)
 
-[node name="BaseEnemy" parent="." index="18" instance=ExtResource("11_wam37")]
+[node name="BaseEnemy" parent="." index="16" instance=ExtResource("11_wam37")]
 position = Vector2(245, 380)

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://byfj1kurh785n"]
+
+[ext_resource type="PackedScene" uid="uid://cwbsdyb6yfqft" path="res://Scenes/Game/Props/InteractableObject.tscn" id="1_60upx"]
+[ext_resource type="Texture2D" uid="uid://v2fklhkbussv" path="res://Assets/Game/Levels/Level1/spike.png" id="2_ffakp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6vob"]
+size = Vector2(8, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b62mm"]
+size = Vector2(29, 36)
+
+[node name="InteractableObject" instance=ExtResource("1_60upx")]
+frase = "As vezes esquivar é a escolha certa"
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_ffakp")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(-3, 4.5)
+shape = SubResource("RectangleShape2D_n6vob")
+
+[node name="DetectionShape2D" parent="Area2D" index="0"]
+position = Vector2(-2, 6)
+shape = SubResource("RectangleShape2D_b62mm")

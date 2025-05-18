@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://b037l10kcod27" path="res://Assets/Game/Levels/Level_0/MrRainbow.png" id="2_miue3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eif7w"]
-size = Vector2(80, 31)
+size = Vector2(109, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvdoa"]
-size = Vector2(117, 80.5)
+size = Vector2(124.5, 84.25)
 
 [node name="InteractableObject" instance=ExtResource("1_ns1ji")]
 frase = "Diga ola a senhor Augusto estranho estranho Augusto senhor"
@@ -16,9 +16,9 @@ frase = "Diga ola a senhor Augusto estranho estranho Augusto senhor"
 texture = ExtResource("2_miue3")
 
 [node name="CollisionShape2D" parent="StaticBody2D" index="0"]
-position = Vector2(0, -2.5)
+position = Vector2(-1.5, 14)
 shape = SubResource("RectangleShape2D_eif7w")
 
 [node name="DetectionShape2D" parent="Area2D" index="0"]
-position = Vector2(-0.5, -2.25)
+position = Vector2(0.75, 1.875)
 shape = SubResource("RectangleShape2D_kvdoa")
