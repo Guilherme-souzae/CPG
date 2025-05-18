@@ -1,13 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://68ecbqhs0o"]
+[gd_scene load_steps=2 format=3 uid="uid://blbqdknd0l2v7"]
 
-[ext_resource type="PackedScene" uid="uid://b8ccjgcdxuv4u" path="res://Scenes/Game/levels/game.tscn" id="1_w616p"]
-[ext_resource type="PackedScene" uid="uid://wm3kdiqqobxx" path="res://Scenes/Game/player.tscn" id="2_nxs3y"]
-[ext_resource type="PackedScene" uid="uid://c5s1u8da8boyb" path="res://Scenes/Game/battle_trigger.tscn" id="3_nxs3y"]
+[ext_resource type="PackedScene" uid="uid://b8ccjgcdxuv4u" path="res://Scenes/Game/levels/game.tscn" id="1_0oq2q"]
 
-[node name="Game" instance=ExtResource("1_w616p")]
-
-[node name="Player" parent="." index="0" instance=ExtResource("2_nxs3y")]
-position = Vector2(230, 191)
-
-[node name="InteractableObject" parent="." index="1" instance=ExtResource("3_nxs3y")]
-position = Vector2(404, 307)
+[node name="Game" instance=ExtResource("1_0oq2q")]
