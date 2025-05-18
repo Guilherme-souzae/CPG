@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://mb8o70wjl5ha"]
+
+[ext_resource type="Script" uid="uid://bj0qjorwm0jj6" path="res://Scripts/Combat/BaseEnemy.gd" id="1_eoof4"]
+[ext_resource type="Texture2D" uid="uid://bmy0tjh81pdrv" path="res://Assets/gargulabattle.png" id="2_y18ir"]
+
+[resource]
+script = ExtResource("1_eoof4")
+name = "O Gárgula"
+introduction = "Esta estátua não é inofensiva"
+death = "A Gárgula se estilhaça..."
+hit = "Um soco lento e poderoso acerta sua perna."
+brutal = "A gárgula quebra os ossos de sua caixa toráxica"
+miss = "A gárgula erra, você reza para que não seja a última vez que ela faça isso"
+hurt = "Ela nem mesmo se move quando atacada..."
+crippled = "Finalmente uma reação dela, ela sorri e diz \"Finalmente alguém que consegue me ferir!\""
+dodge = "A gárgula não esquiva, você apenas erra."
+texture = ExtResource("2_y18ir")
+health = 200
+attack = 20
+margin = 1
+accuracy = 8
+evasion = 0
+special_move = "skydive"

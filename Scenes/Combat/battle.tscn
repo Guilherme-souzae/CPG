@@ -1,52 +1,113 @@
-[gd_scene load_steps=12 format=3 uid="uid://x5qt2xtfi72p"]
+[gd_scene load_steps=16 format=3 uid="uid://x5qt2xtfi72p"]
 
 [ext_resource type="Script" uid="uid://c3iuojo580cpu" path="res://Scripts/Combat/battle.gd" id="1_0t7lw"]
 [ext_resource type="Resource" uid="uid://dp321j5buomfk" path="res://Scenes/Combat/Enemies/centipede.tres" id="2_ixk4w"]
 [ext_resource type="Texture2D" uid="uid://dwxuos5sltqd0" path="res://Assets/BACKGROUND_LIMBO.png" id="2_kiahg"]
-[ext_resource type="Texture2D" uid="uid://pnbvvo4ur4ob" path="res://Assets/spr_fight_enemy_centopeia.png" id="4_ixk4w"]
+[ext_resource type="Texture2D" uid="uid://dl45ve1jqvqwk" path="res://Assets/lost.png" id="4_3rw4r"]
 [ext_resource type="Texture2D" uid="uid://bhltp55v2ruvw" path="res://Assets/Prometheus_perfil.png" id="5_3rw4r"]
+[ext_resource type="Texture2D" uid="uid://bhy85smv8ubkf" path="res://Assets/spr_battlebox.png" id="6_5d35m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6gacv"]
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5d35m"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7nr6w"]
+texture = ExtResource("6_5d35m")
+expand_margin_left = 10.0
+expand_margin_top = 15.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kiahg"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6gacv"]
+texture = ExtResource("6_5d35m")
+texture_margin_left = 5.0
+texture_margin_top = 4.0
+texture_margin_right = 5.0
+texture_margin_bottom = 4.0
+draw_center = false
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8g4v"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5d35m"]
+texture = ExtResource("6_5d35m")
+texture_margin_left = 5.0
+texture_margin_top = 4.0
+texture_margin_right = 5.0
+texture_margin_bottom = 4.0
+draw_center = false
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ixk4w"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mjpwh"]
+texture = ExtResource("6_5d35m")
+texture_margin_left = 5.0
+texture_margin_top = 4.0
+texture_margin_right = 5.0
+texture_margin_bottom = 4.0
+draw_center = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3rw4r"]
 bg_color = Color(0, 0, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_6gacv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnemyContainer/Enemy:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnemyContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(369, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5d35m"]
+resource_name = "enemy_damaged"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnemyContainer/Enemy:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5),
+"transitions": PackedFloat32Array(1, 1.07177, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.507244, 1.26945e-06, 1.92523e-07, 1), Color(1, 1, 1, 1), Color(0.507244, 1.26945e-06, 1.92523e-07, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnemyContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.124, 0.25, 0.375, 0.5),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5),
+"update": 0,
+"values": [Vector2(369, 0), Vector2(360, 0), Vector2(360, 9), Vector2(369, 9), Vector2(369, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mjpwh"]
+_data = {
+&"RESET": SubResource("Animation_6gacv"),
+&"enemy_damaged": SubResource("Animation_5d35m")
+}
 
 [node name="Battle" type="Control"]
 layout_mode = 3
@@ -80,29 +141,28 @@ expand_mode = 1
 [node name="EnemyContainer" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(449, 449)
 layout_mode = 0
-offset_left = 354.0
-offset_top = 1.0
+offset_left = 369.0
 offset_right = 1150.0
-offset_bottom = 650.0
+offset_bottom = 649.0
 
 [node name="Enemy" type="TextureRect" parent="EnemyContainer"]
 layout_mode = 2
-texture = ExtResource("4_ixk4w")
+texture = ExtResource("4_3rw4r")
 expand_mode = 2
 
 [node name="PlayerPanel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 182.0
-offset_top = 411.0
-offset_right = 369.0
-offset_bottom = 652.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_5d35m")
+offset_left = 191.0
+offset_top = 412.0
+offset_right = 378.0
+offset_bottom = 653.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_7nr6w")
 
 [node name="PlayerData" type="VBoxContainer" parent="PlayerPanel"]
 layout_mode = 0
-offset_top = 1.0
-offset_right = 187.0
-offset_bottom = 244.0
+offset_left = 1.0
+offset_right = 188.0
+offset_bottom = 243.0
 
 [node name="PlayerHPLabel" type="Label" parent="PlayerPanel/PlayerData"]
 layout_mode = 2
@@ -133,19 +193,22 @@ offset_bottom = 240.0
 [node name="Attack" type="Button" parent="ActionPanel/PlayerActions"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/normal = SubResource("StyleBoxFlat_kiahg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6gacv")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6gacv")
 text = "Attack"
 
 [node name="Block" type="Button" parent="ActionPanel/PlayerActions"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/normal = SubResource("StyleBoxFlat_w8g4v")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5d35m")
+theme_override_styles/normal = SubResource("StyleBoxTexture_5d35m")
 text = "Dodge"
 
 [node name="Run" type="Button" parent="ActionPanel/PlayerActions"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/normal = SubResource("StyleBoxFlat_ixk4w")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mjpwh")
+theme_override_styles/normal = SubResource("StyleBoxTexture_mjpwh")
 text = "Run"
 
 [node name="TextBox" type="Panel" parent="."]
@@ -168,6 +231,11 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Text goes here"
 autowrap_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_mjpwh")
+}
 
 [connection signal="draw" from="." to="." method="_on_draw"]
 [connection signal="pressed" from="ActionPanel/PlayerActions/Attack" to="." method="_on_attack_pressed"]

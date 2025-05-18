@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cog0fbvu0kql3"]
+
+[ext_resource type="Script" uid="uid://bj0qjorwm0jj6" path="res://Scripts/Combat/BaseEnemy.gd" id="1_v1c4c"]
+[ext_resource type="Texture2D" uid="uid://dia5ard0ui21k" path="res://Assets/coelhobosta.png" id="2_v0wer"]
+
+[resource]
+script = ExtResource("1_v1c4c")
+name = "Enemy Name"
+introduction = "Enemy Introduction"
+death = "Enemy Dies!"
+hit = "Enemy Hits you."
+brutal = "Enemy lands a Brutal Hit..."
+miss = "The Enemy Missed"
+hurt = "Enemy is Hurt."
+crippled = "Enemy go hit by a Brutal Hit!"
+dodge = "Enemy Dodges."
+texture = ExtResource("2_v0wer")
+health = 10
+attack = 1
+margin = 0
+accuracy = 6
+evasion = 15
+special_move = "none"
