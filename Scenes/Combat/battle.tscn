@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://x5qt2xtfi72p"]
 
 [ext_resource type="Script" uid="uid://c3iuojo580cpu" path="res://Scripts/Combat/battle.gd" id="1_0t7lw"]
-[ext_resource type="Resource" uid="uid://mb8o70wjl5ha" path="res://Scenes/Combat/Enemies/gargoyle.tres" id="2_6gacv"]
+[ext_resource type="Resource" uid="uid://dp321j5buomfk" path="res://Scenes/Combat/Enemies/centipede.tres" id="2_6gacv"]
 [ext_resource type="Texture2D" uid="uid://dwxuos5sltqd0" path="res://Assets/BACKGROUND_LIMBO.png" id="2_kiahg"]
 [ext_resource type="Texture2D" uid="uid://f7vq135rxqau" path="res://Assets/deathmessage.png" id="3_6gacv"]
 [ext_resource type="Texture2D" uid="uid://dl45ve1jqvqwk" path="res://Assets/lost.png" id="4_3rw4r"]
@@ -121,6 +121,7 @@ script = ExtResource("1_0t7lw")
 enemy = ExtResource("2_6gacv")
 
 [node name="Blackscreen" type="Panel" parent="."]
+visible = false
 top_level = true
 z_index = 1
 layout_mode = 1
