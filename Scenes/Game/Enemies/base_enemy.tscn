@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://cog0fbvu0kql3" path="res://Scenes/Combat/Enemies/bunny.tres" id="2_yhwkc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6fqhk"]
-radius = 239.015
+radius = 79.1581
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yhwkc"]
 size = Vector2(106, 105)
@@ -15,6 +15,7 @@ script = ExtResource("1_6fqhk")
 enemyData = ExtResource("2_yhwkc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.275, 0.275)
 texture = ExtResource("1_0w5if")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
@@ -22,12 +23,14 @@ texture = ExtResource("1_0w5if")
 [node name="DetectionArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_6fqhk")
 
 [node name="CombatArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CombatArea"]
-position = Vector2(-1, 0.5)
+position = Vector2(-2, 1)
+scale = Vector2(0.24, 0.24)
 shape = SubResource("RectangleShape2D_yhwkc")
 
 [node name="RunTimer" type="Timer" parent="."]
