@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://b5k7angn5tagn"]
+[gd_scene load_steps=25 format=4 uid="uid://b5k7angn5tagn"]
 
 [ext_resource type="PackedScene" uid="uid://b8ccjgcdxuv4u" path="res://Scenes/Game/levels/game.tscn" id="1_xqpw6"]
 [ext_resource type="PackedScene" uid="uid://wm3kdiqqobxx" path="res://Scenes/Game/player.tscn" id="2_1aeop"]
@@ -11,6 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://b073ypgi7j5j3" path="res://Scenes/Game/Props/Level_0/wall2.tscn" id="9_2hoxu"]
 [ext_resource type="PackedScene" uid="uid://i8gjhvpji8mv" path="res://Scenes/Game/Props/Level_0/exit.tscn" id="10_xuasg"]
 [ext_resource type="PackedScene" uid="uid://by1yb4ycusxc7" path="res://Scenes/Game/Enemies/base_enemy.tscn" id="11_wam37"]
+[ext_resource type="Texture2D" uid="uid://vf1750y60dca" path="res://Assets/Game/monsters/lost/lost1.png" id="12_ahob8"]
+[ext_resource type="Texture2D" uid="uid://doucne13eg780" path="res://Assets/Game/monsters/lost/lost2.png" id="13_ap5e5"]
+[ext_resource type="Texture2D" uid="uid://bf8wba3828s4b" path="res://Assets/Game/monsters/lost/lost3.png" id="14_sldud"]
+[ext_resource type="Texture2D" uid="uid://be5twpox1wpwv" path="res://Assets/Game/monsters/lost/lost4.png" id="15_oty6p"]
+[ext_resource type="Resource" uid="uid://81jiwsfvv8ar" path="res://Scenes/Combat/Enemies/zombie.tres" id="16_28p12"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s7wjp"]
 texture = ExtResource("3_3j4b3")
@@ -524,3 +529,6 @@ scale = Vector2(1.70904, 1.705)
 
 [node name="BaseEnemy" parent="." index="16" instance=ExtResource("11_wam37")]
 position = Vector2(245, 380)
+enemySprite = Array[Texture2D]([ExtResource("12_ahob8"), ExtResource("13_ap5e5"), ExtResource("14_sldud"), ExtResource("15_oty6p")])
+enemyData = ExtResource("16_28p12")
+speed = 45
