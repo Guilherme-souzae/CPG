@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var enemySprite: Array[Texture2D]
+@export var enemyDeath: Texture2D
 @export var enemyData: Resource = null
 @export var speed = 100
 
@@ -40,31 +41,30 @@ func _physics_process(delta):
 				can_see_player = false
 
 func update_sprite_direction(direction: Vector2):
-	# Determina a direção predominante
+	if enemySprite.size() == 1:
+		$Sprite2D.texture = enemySprite[0]
+		return
+
 	if abs(direction.x) > abs(direction.y):
 		# Movimento horizontal predominante
 		if direction.x > 0:
 			# Direita
-			if last_direction != 1:
+			if last_direction != 1 and enemySprite.size() > 1:
 				$Sprite2D.texture = enemySprite[1]
 				last_direction = 1
-		else:
-			# Esquerda
-			if last_direction != 2:
-				$Sprite2D.texture = enemySprite[2]
-				last_direction = 2
+		elif last_direction != 2 and enemySprite.size() > 2:
+			$Sprite2D.texture = enemySprite[2]
+			last_direction = 2
 	else:
 		# Movimento vertical predominante
 		if direction.y > 0:
 			# Baixo
-			if last_direction != 0:
+			if last_direction != 0 and enemySprite.size() > 0:
 				$Sprite2D.texture = enemySprite[0]
 				last_direction = 0
-		else:
-			# Cima
-			if last_direction != 3:
-				$Sprite2D.texture = enemySprite[3]
-				last_direction = 3
+		elif last_direction != 3 and enemySprite.size() > 3:
+			$Sprite2D.texture = enemySprite[3]
+			last_direction = 3
 
 func _on_DetectionArea_body_entered(body):
 	if body.is_in_group("player"):
@@ -96,4 +96,6 @@ func _on_combat_ran():
 	get_node("DetectionArea/CollisionShape2D").disabled = false
 
 func _on_combat_won():
-	queue_free()
+	$Sprite2D.texture = enemyDeath
+	get_node("CombatArea/CollisionShape2D").disabled = true
+	get_node("DetectionArea/CollisionShape2D").disabled = true

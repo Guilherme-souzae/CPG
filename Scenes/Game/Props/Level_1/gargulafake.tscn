@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://df8r0vawuqtti"]
+
+[ext_resource type="PackedScene" uid="uid://cwbsdyb6yfqft" path="res://Scenes/Game/Props/InteractableObject.tscn" id="1_0g06i"]
+[ext_resource type="Texture2D" uid="uid://cbfnygv7s2c6p" path="res://Assets/Game/monsters/gargula.png" id="2_41sb3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fntyg"]
+size = Vector2(45, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fhyn6"]
+size = Vector2(56, 53)
+
+[node name="InteractableObject" instance=ExtResource("1_0g06i")]
+frase = "É uma estátua inofensiva"
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_41sb3")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(-0.5, 7)
+shape = SubResource("RectangleShape2D_fntyg")
+
+[node name="DetectionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_fhyn6")
