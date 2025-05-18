@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://blbqdknd0l2v7"]
+[gd_scene load_steps=27 format=4 uid="uid://blbqdknd0l2v7"]
 
 [ext_resource type="PackedScene" uid="uid://b8ccjgcdxuv4u" path="res://Scenes/Game/levels/game.tscn" id="1_0oq2q"]
 [ext_resource type="PackedScene" uid="uid://wm3kdiqqobxx" path="res://Scenes/Game/player.tscn" id="2_w616p"]
@@ -20,6 +20,8 @@
 [ext_resource type="Resource" uid="uid://mb8o70wjl5ha" path="res://Scenes/Combat/Enemies/gargoyle.tres" id="17_5ak50"]
 [ext_resource type="Texture2D" uid="uid://c4usuyljg548x" path="res://Assets/Game/monsters/gargulaDead.png" id="18_6jfts"]
 [ext_resource type="PackedScene" uid="uid://df8r0vawuqtti" path="res://Scenes/Game/Props/Level_1/gargulafake.tscn" id="20_6jfts"]
+[ext_resource type="Resource" uid="uid://dusg1cxihp7by" path="res://Scenes/Combat/Enemies/abyss.tres" id="21_4mjf7"]
+[ext_resource type="Texture2D" uid="uid://cui42ldgufewe" path="res://Assets/Game/monsters/abyssGame.png" id="21_yi2tv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nxs3y"]
 texture = ExtResource("3_nxs3y")
@@ -316,8 +318,6 @@ texture_region_size = Vector2i(32, 32)
 9:1/3/flip_h = true
 9:1/3/physics_layer_0/polygon_0/points = PackedVector2Array(6.69125, -16, 16, -16, 16, -8.2844, 9.55893, -10.5148)
 10:1/0 = 0
-11:1/0 = 0
-11:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 0:2/0 = 0
 1:2/0 = 0
 2:2/0 = 0
@@ -367,6 +367,8 @@ texture_region_size = Vector2i(32, 32)
 6:5/0 = 0
 7:5/0 = 0
 8:5/0 = 0
+11:1/0 = 0
+11:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSet" id="TileSet_a5nnn"]
 tile_size = Vector2i(32, 32)
@@ -444,7 +446,7 @@ enemyDeath = ExtResource("15_6hx41")
 enemyData = ExtResource("15_yi2tv")
 
 [node name="BaseEnemy2" parent="." index="16" instance=ExtResource("10_wesy5")]
-position = Vector2(195, -1746)
+position = Vector2(235, -1525)
 enemySprite = Array[Texture2D]([ExtResource("16_k6jde")])
 enemyDeath = ExtResource("18_6jfts")
 enemyData = ExtResource("17_5ak50")
@@ -459,17 +461,21 @@ position = Vector2(236, -1639)
 [node name="InteractableObject8" parent="." index="19" instance=ExtResource("20_6jfts")]
 position = Vector2(149, -1527)
 
-[node name="InteractableObject9" parent="." index="20" instance=ExtResource("20_6jfts")]
-position = Vector2(235, -1527)
-
-[node name="InteractableObject10" parent="." index="21" instance=ExtResource("20_6jfts")]
+[node name="InteractableObject10" parent="." index="20" instance=ExtResource("20_6jfts")]
 position = Vector2(147, -1406)
 
-[node name="InteractableObject11" parent="." index="22" instance=ExtResource("20_6jfts")]
+[node name="InteractableObject11" parent="." index="21" instance=ExtResource("20_6jfts")]
 position = Vector2(238, -1407)
 
-[node name="InteractableObject12" parent="." index="23" instance=ExtResource("20_6jfts")]
+[node name="InteractableObject12" parent="." index="22" instance=ExtResource("20_6jfts")]
 position = Vector2(145, -1280)
 
-[node name="InteractableObject13" parent="." index="24" instance=ExtResource("20_6jfts")]
+[node name="InteractableObject13" parent="." index="23" instance=ExtResource("20_6jfts")]
 position = Vector2(242, -1280)
+
+[node name="BaseEnemy3" parent="." index="24" instance=ExtResource("10_wesy5")]
+position = Vector2(194, -1744)
+enemySprite = Array[Texture2D]([ExtResource("21_yi2tv")])
+enemyDeath = ExtResource("21_yi2tv")
+enemyData = ExtResource("21_4mjf7")
+speed = 0

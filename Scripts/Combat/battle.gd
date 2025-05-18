@@ -260,6 +260,16 @@ func specialActions(attackroll, hitchance):
 					$ActionPanel.show()
 					current_enemy_health = max(0, current_enemy_health-20)
 				preparedAction = false
+		"stare":
+			display_text("O abismo olha de volta...")
+			$PlayerPanel.hide()
+			$ActionPanel.hide()
+			await textbox_closed
+			$PlayerPanel.show()
+			$ActionPanel.show()
+			current_player_health = max(0, current_player_health-(100 - current_player_embers))
+			setHealth(current_player_health, PlayerStats.max_health)
+			current_enemy_health = max(0, current_enemy_health-20)
 		"none":
 			display_text("O coelho respira amedrontado...")
 			$PlayerPanel.hide()
@@ -306,8 +316,10 @@ func _on_draw() -> void:
 
 
 func _on_enemy_dead() -> void:
-	PlayerStats.current_health = current_player_health
+	PlayerStats.current_health = max(current_player_health, PlayerStats.max_health)
 	PlayerStats.current_embers = current_player_embers + enemy.reward
+	PlayerStats.current_embers = clamp(current_player_embers,0, PlayerStats.max_embers)
+	print("Current Embers: %s" % PlayerStats.current_embers)
 	$Blackscreen.show()
 	display_text(enemy.death)
 	$PlayerPanel.hide()
@@ -325,8 +337,7 @@ func _on_player_dead() -> void:
 	$PlayerPanel.hide()
 	$ActionPanel.hide()
 	await textbox_closed
-	get_node("/root/Main").switch_to_game() #Placeholder
-	
+	get_tree().reload_current_scene()
 func musicPlayer():
 	match enemy.name:
 		"Gárgula":

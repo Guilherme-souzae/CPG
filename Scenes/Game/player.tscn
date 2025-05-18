@@ -196,4 +196,4 @@ scale = Vector2(5.5, 5.5)
 shape = SubResource("CircleShape2D_lq2ly")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3.02, 3.02)
+zoom = Vector2(5, 5)

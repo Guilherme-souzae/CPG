@@ -4,7 +4,7 @@ var hasInteracted: bool = false
 
 func interact():
 	if (!hasInteracted):
-		PlayerStats.current_embers = 100
+		PlayerStats.current_embers = 0
 		PlayerStats.update()
 		hasInteracted = true
 		Global.changePfp()

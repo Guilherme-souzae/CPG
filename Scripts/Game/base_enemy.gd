@@ -84,6 +84,7 @@ func _on_DetectionArea_body_exited(body):
 func _on_CombatArea_body_entered(body):
 	if body.is_in_group("player"):
 		print("o monstro te pegou")
+		Global.signal_combat_start(self)
 		get_node("/root/Main/Battle").setEnemy(enemyData)
 		get_node("/root/Main").switch_to_battle()
 
@@ -95,7 +96,11 @@ func _on_combat_ran():
 	get_node("CombatArea/CollisionShape2D").disabled = false
 	get_node("DetectionArea/CollisionShape2D").disabled = false
 
-func _on_combat_won():
+func _on_combat_won(enemy):
+	if enemy != self:
+		return  # Ignora se não for esta instância
+		
 	$Sprite2D.texture = enemyDeath
 	get_node("CombatArea/CollisionShape2D").disabled = true
 	get_node("DetectionArea/CollisionShape2D").disabled = true
+	speed = 0

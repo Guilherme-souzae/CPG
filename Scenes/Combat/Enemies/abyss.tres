@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dusg1cxihp7by"]
+
+[ext_resource type="Script" uid="uid://bj0qjorwm0jj6" path="res://Scripts/Combat/BaseEnemy.gd" id="1_j0a2o"]
+
+[resource]
+script = ExtResource("1_j0a2o")
+name = "abismo"
+introduction = "Apenas um buraco comum, o fundo aparenta refletir a luz de fora e a escuridão de dentro"
+death = "Você volta a si..."
+hit = "O abismo leva parte de você..."
+brutal = "Deixe o abismo te levar..."
+miss = "Você não precisa se machucar mais do que já fez..."
+hurt = "Uma luta contra a aflição, mas há alguma esperanç de vitória?"
+crippled = "Um esforço valente na resistência da chama dentro de você!"
+dodge = "Nã há motivo para isso, abaixe sua arma..."
+health = 150
+attack = 5
+margin = 10
+accuracy = 15
+evasion = 5
+reward = 0
+runchance = -1
+special_move = "None"

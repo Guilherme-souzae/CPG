@@ -20,6 +20,6 @@ attack = 1
 margin = 0
 accuracy = 6
 evasion = 15
-reward = -100
+reward = -10
 runchance = 20
 special_move = "none"

@@ -21,6 +21,10 @@ srun/main_scene="uid://b8ccjgcdxuv4u"
 PlayerStats="*res://Scripts/Combat/PlayerStats.gd"
 Global="*res://Scripts/Global.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [global_group]
 
 player=""
