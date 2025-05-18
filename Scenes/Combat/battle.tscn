@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://x5qt2xtfi72p"]
+[gd_scene load_steps=26 format=3 uid="uid://x5qt2xtfi72p"]
 
 [ext_resource type="Script" uid="uid://c3iuojo580cpu" path="res://Scripts/Combat/battle.gd" id="1_0t7lw"]
 [ext_resource type="Resource" uid="uid://dp321j5buomfk" path="res://Scenes/Combat/Enemies/centipede.tres" id="2_6gacv"]
@@ -7,7 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://dl45ve1jqvqwk" path="res://Assets/lost.png" id="4_3rw4r"]
 [ext_resource type="Texture2D" uid="uid://bhltp55v2ruvw" path="res://Assets/Prometheus_perfil.png" id="5_3rw4r"]
 [ext_resource type="Texture2D" uid="uid://bhy85smv8ubkf" path="res://Assets/spr_battlebox.png" id="6_5d35m"]
+[ext_resource type="Script" uid="uid://c17enh07hnv1r" path="res://Scripts/Combat/player_image.gd" id="8_cnkua"]
 [ext_resource type="AudioStream" uid="uid://bosn7tjb54esn" path="res://Sound/Banshee Scream.wav" id="8_uqihu"]
+[ext_resource type="Texture2D" uid="uid://cpp0ec082sb84" path="res://Assets/PrometheusLOUCURA_perfil.png" id="9_6kdea"]
 [ext_resource type="AudioStream" uid="uid://clhcptrpwuehu" path="res://Sound/Rat Monster Bark.wav" id="9_iwv0x"]
 [ext_resource type="AudioStream" uid="uid://bgah8u0hpxf11" path="res://Sound/fight_entrance.mp3" id="10_cnkua"]
 [ext_resource type="AudioStream" uid="uid://clcxum7pkicpp" path="res://Sound/rock-cinematic-161648.mp3" id="11_6kdea"]
@@ -194,6 +196,8 @@ text = "Embers:X/Y"
 layout_mode = 2
 texture = ExtResource("5_3rw4r")
 expand_mode = 4
+script = ExtResource("8_cnkua")
+pfp = ExtResource("9_6kdea")
 
 [node name="ActionPanel" type="Panel" parent="."]
 layout_mode = 0

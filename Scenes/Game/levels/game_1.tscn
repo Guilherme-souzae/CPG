@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://blbqdknd0l2v7"]
+[gd_scene load_steps=22 format=4 uid="uid://blbqdknd0l2v7"]
 
 [ext_resource type="PackedScene" uid="uid://b8ccjgcdxuv4u" path="res://Scenes/Game/levels/game.tscn" id="1_0oq2q"]
 [ext_resource type="PackedScene" uid="uid://wm3kdiqqobxx" path="res://Scenes/Game/player.tscn" id="2_w616p"]
@@ -9,6 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://jw6idydg8ald" path="res://Scenes/Game/Props/Level_1/chaos.tscn" id="7_apg8t"]
 [ext_resource type="PackedScene" uid="uid://b5216jlb03vix" path="res://Scenes/Game/Props/Level_1/faceless.tscn" id="8_atwf2"]
 [ext_resource type="PackedScene" uid="uid://di5bxio4h3gq0" path="res://Scenes/Game/Props/Level_1/boulder.tscn" id="9_toctp"]
+[ext_resource type="PackedScene" uid="uid://by1yb4ycusxc7" path="res://Scenes/Game/Enemies/base_enemy.tscn" id="10_wesy5"]
+[ext_resource type="Texture2D" uid="uid://bskl1nkpoqf2o" path="res://Assets/Game/monsters/centopeia/centopeia1.png" id="11_3iufd"]
+[ext_resource type="Texture2D" uid="uid://tl1cncvtgdjd" path="res://Assets/Game/monsters/centopeia/centopeia2.png" id="12_6hx41"]
+[ext_resource type="Texture2D" uid="uid://ch16fropjw4p2" path="res://Assets/Game/monsters/centopeia/centopeia3.png" id="13_6jfts"]
+[ext_resource type="Texture2D" uid="uid://cqydscv32alw6" path="res://Assets/Game/monsters/centopeia/centopeia4.png" id="14_4mjf7"]
+[ext_resource type="Resource" uid="uid://dp321j5buomfk" path="res://Scenes/Combat/Enemies/centipede.tres" id="15_yi2tv"]
+[ext_resource type="Texture2D" uid="uid://cbfnygv7s2c6p" path="res://Assets/Game/monsters/gargula.png" id="16_k6jde"]
+[ext_resource type="Resource" uid="uid://mb8o70wjl5ha" path="res://Scenes/Combat/Enemies/gargoyle.tres" id="17_5ak50"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nxs3y"]
 texture = ExtResource("3_nxs3y")
@@ -424,3 +432,14 @@ position = Vector2(190, -18)
 
 [node name="InteractableObject5" parent="." index="14" instance=ExtResource("8_atwf2")]
 position = Vector2(-54, -658)
+
+[node name="BaseEnemy" parent="." index="15" instance=ExtResource("10_wesy5")]
+position = Vector2(-102, -73)
+enemySprite = Array[Texture2D]([ExtResource("11_3iufd"), ExtResource("12_6hx41"), ExtResource("13_6jfts"), ExtResource("14_4mjf7")])
+enemyData = ExtResource("15_yi2tv")
+
+[node name="BaseEnemy2" parent="." index="16" instance=ExtResource("10_wesy5")]
+position = Vector2(145, -208)
+enemySprite = Array[Texture2D]([ExtResource("16_k6jde")])
+enemyData = ExtResource("17_5ak50")
+speed = 0

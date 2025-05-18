@@ -7,6 +7,7 @@ func interact():
 		PlayerStats.current_embers = 100
 		PlayerStats.update()
 		hasInteracted = true
+		Global.changePfp()
 	game_node.show_message(frase, 2.5)
 	print("Estatua interagida")
 	print("HP: %d/%d" % [PlayerStats.current_health, PlayerStats.max_health])
