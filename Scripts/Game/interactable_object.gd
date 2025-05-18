@@ -15,6 +15,8 @@ func _process(delta):
 		interact()
 		
 func interact():
+	var game_node = get_node("/root/Main/Game")
+	game_node.show_message("Você pegou uma espada!", 2.5)
 	print("Objeto interagido")
 	
 func _on_body_entered(body):  # Mudado de area_entered para body_entered
