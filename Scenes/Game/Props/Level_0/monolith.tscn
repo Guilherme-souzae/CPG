@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://njmj1dfuyf8l"]
+
+[ext_resource type="PackedScene" uid="uid://cwbsdyb6yfqft" path="res://Scenes/Game/Props/InteractableObject.tscn" id="1_l7cap"]
+[ext_resource type="Texture2D" uid="uid://ddsa32ltv61ax" path="res://Assets/Game/Levels/Level_0/monolith.png" id="2_qwfa4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_280yh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1s1vj"]
+size = Vector2(30, 77)
+
+[node name="InteractableObject" instance=ExtResource("1_l7cap")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_qwfa4")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(0, 24)
+shape = SubResource("RectangleShape2D_280yh")
+
+[node name="DetectionShape2D" parent="Area2D" index="0"]
+position = Vector2(1, -2.5)
+shape = SubResource("RectangleShape2D_1s1vj")

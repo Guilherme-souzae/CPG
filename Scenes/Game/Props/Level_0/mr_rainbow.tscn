@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://ci1tbur6rf4qt"]
+
+[ext_resource type="PackedScene" uid="uid://cwbsdyb6yfqft" path="res://Scenes/Game/Props/InteractableObject.tscn" id="1_ns1ji"]
+[ext_resource type="Texture2D" uid="uid://b037l10kcod27" path="res://Assets/Game/Levels/Level_0/MrRainbow.png" id="2_miue3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eif7w"]
+size = Vector2(80, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvdoa"]
+size = Vector2(117, 80.5)
+
+[node name="InteractableObject" instance=ExtResource("1_ns1ji")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_miue3")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_eif7w")
+
+[node name="DetectionShape2D" parent="Area2D" index="0"]
+position = Vector2(-0.5, -2.25)
+shape = SubResource("RectangleShape2D_kvdoa")

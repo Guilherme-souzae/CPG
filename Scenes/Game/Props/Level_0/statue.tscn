@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bi2vo3vln45k8"]
+
+[ext_resource type="PackedScene" uid="uid://cwbsdyb6yfqft" path="res://Scenes/Game/Props/InteractableObject.tscn" id="1_44gfs"]
+[ext_resource type="Texture2D" uid="uid://stprvmm1bcr1" path="res://Assets/Game/Levels/Level_0/statue1.png" id="2_et8cu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qvq6"]
+size = Vector2(96, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_478vf"]
+size = Vector2(122, 77)
+
+[node name="InteractableObject" instance=ExtResource("1_44gfs")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_et8cu")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(-1, 39.5)
+shape = SubResource("RectangleShape2D_0qvq6")
+
+[node name="Area2D" parent="." index="2"]
+position = Vector2(20, 33)
+
+[node name="DetectionShape2D" parent="Area2D" index="0"]
+position = Vector2(-22, -6.5)
+shape = SubResource("RectangleShape2D_478vf")

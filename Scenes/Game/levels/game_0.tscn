@@ -1,8 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://b5k7angn5tagn"]
+[gd_scene load_steps=17 format=3 uid="uid://b5k7angn5tagn"]
 
 [ext_resource type="PackedScene" uid="uid://b8ccjgcdxuv4u" path="res://Scenes/Game/levels/game.tscn" id="1_xqpw6"]
 [ext_resource type="PackedScene" uid="uid://wm3kdiqqobxx" path="res://Scenes/Game/player.tscn" id="2_1aeop"]
 [ext_resource type="Texture2D" uid="uid://b1m5ruqvtb3tr" path="res://Assets/Game/Levels/Level_0/tileset_0.png" id="3_3j4b3"]
+[ext_resource type="PackedScene" uid="uid://njmj1dfuyf8l" path="res://Scenes/Game/Props/Level_0/monolith.tscn" id="4_on6ef"]
+[ext_resource type="PackedScene" uid="uid://ci1tbur6rf4qt" path="res://Scenes/Game/Props/Level_0/mr_rainbow.tscn" id="5_xuasg"]
+[ext_resource type="PackedScene" uid="uid://bi2vo3vln45k8" path="res://Scenes/Game/Props/Level_0/statue.tscn" id="6_wam37"]
+[ext_resource type="PackedScene" uid="uid://cixf2v2m18rny" path="res://Scenes/Game/Props/Level_0/tower.tscn" id="7_djrqv"]
+[ext_resource type="PackedScene" uid="uid://cr02q5xdaaera" path="res://Scenes/Game/Props/Level_0/wall1.tscn" id="8_e668a"]
+[ext_resource type="PackedScene" uid="uid://b073ypgi7j5j3" path="res://Scenes/Game/Props/Level_0/wall2.tscn" id="9_2hoxu"]
+[ext_resource type="PackedScene" uid="uid://i8gjhvpji8mv" path="res://Scenes/Game/Props/Level_0/exit.tscn" id="10_xuasg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s7wjp"]
 texture = ExtResource("3_3j4b3")
@@ -244,3 +251,49 @@ shape = SubResource("WorldBoundaryShape2D_3xsjw")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" index="3"]
 position = Vector2(-371, 32)
 shape = SubResource("WorldBoundaryShape2D_o4386")
+
+[node name="InteractableObject" parent="." index="3" instance=ExtResource("4_on6ef")]
+position = Vector2(-67, 454)
+
+[node name="InteractableObject2" parent="." index="4" instance=ExtResource("4_on6ef")]
+position = Vector2(-30, 285)
+
+[node name="InteractableObject3" parent="." index="5" instance=ExtResource("4_on6ef")]
+position = Vector2(-44, 59)
+
+[node name="InteractableObject4" parent="." index="6" instance=ExtResource("4_on6ef")]
+position = Vector2(317, 30)
+
+[node name="InteractableObject5" parent="." index="7" instance=ExtResource("4_on6ef")]
+position = Vector2(330, 269)
+
+[node name="InteractableObject6" parent="." index="8" instance=ExtResource("4_on6ef")]
+position = Vector2(383, 460)
+
+[node name="InteractableObject7" parent="." index="9" instance=ExtResource("5_xuasg")]
+position = Vector2(668, 37)
+
+[node name="InteractableObject8" parent="." index="10" instance=ExtResource("4_on6ef")]
+position = Vector2(615, 44)
+
+[node name="InteractableObject9" parent="." index="11" instance=ExtResource("4_on6ef")]
+position = Vector2(716, 44)
+
+[node name="InteractableObject10" parent="." index="12" instance=ExtResource("6_wam37")]
+position = Vector2(-180, 131)
+scale = Vector2(1.56387, 1.47156)
+
+[node name="InteractableObject11" parent="." index="13" instance=ExtResource("7_djrqv")]
+z_index = 2
+position = Vector2(500, 222)
+scale = Vector2(1.96, 2.2)
+
+[node name="InteractableObject12" parent="." index="14" instance=ExtResource("8_e668a")]
+position = Vector2(422, 581)
+
+[node name="InteractableObject13" parent="." index="15" instance=ExtResource("9_2hoxu")]
+position = Vector2(-151, 576)
+
+[node name="InteractableObject14" parent="." index="16" instance=ExtResource("10_xuasg")]
+position = Vector2(132, -140)
+scale = Vector2(1.70904, 1.705)

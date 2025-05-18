@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b073ypgi7j5j3"]
+
+[ext_resource type="PackedScene" uid="uid://cwbsdyb6yfqft" path="res://Scenes/Game/Props/InteractableObject.tscn" id="1_n7xdu"]
+[ext_resource type="Texture2D" uid="uid://sb8s8jdy8iam" path="res://Assets/Game/Levels/Level_0/wall2.png" id="2_dv1yk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vxrjp"]
+size = Vector2(17, 67)
+
+[node name="InteractableObject" instance=ExtResource("1_n7xdu")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_dv1yk")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(1.5, -2.5)
+shape = SubResource("RectangleShape2D_vxrjp")
