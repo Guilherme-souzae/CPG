@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://x5qt2xtfi72p"]
+[gd_scene load_steps=29 format=3 uid="uid://x5qt2xtfi72p"]
 
 [ext_resource type="Script" uid="uid://c3iuojo580cpu" path="res://Scripts/Combat/battle.gd" id="1_0t7lw"]
 [ext_resource type="Resource" uid="uid://dp321j5buomfk" path="res://Scenes/Combat/Enemies/centipede.tres" id="2_6gacv"]
@@ -8,7 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bhltp55v2ruvw" path="res://Assets/Prometheus_perfil.png" id="5_3rw4r"]
 [ext_resource type="Script" uid="uid://08cxln2va3d6" path="res://Scripts/Combat/background.gd" id="5_647tb"]
 [ext_resource type="Texture2D" uid="uid://bhy85smv8ubkf" path="res://Assets/spr_battlebox.png" id="6_5d35m"]
-[ext_resource type="Texture2D" uid="uid://duk8544e2uopg" path="res://Assets/buracoboss.png" id="6_vkuus"]
+[ext_resource type="Texture2D" uid="uid://bko3rs5leqhuc" path="res://Assets/buracobossboss2.png" id="6_vkuus"]
+[ext_resource type="Texture2D" uid="uid://dxuffvyphmv8f" path="res://Assets/backgrounf2.png" id="7_fjgeb"]
 [ext_resource type="Script" uid="uid://c17enh07hnv1r" path="res://Scripts/Combat/player_image.gd" id="8_cnkua"]
 [ext_resource type="AudioStream" uid="uid://bosn7tjb54esn" path="res://Sound/Banshee Scream.wav" id="8_uqihu"]
 [ext_resource type="Texture2D" uid="uid://cpp0ec082sb84" path="res://Assets/PrometheusLOUCURA_perfil.png" id="9_6kdea"]
@@ -131,6 +132,16 @@ grow_vertical = 2
 script = ExtResource("1_0t7lw")
 enemy = ExtResource("2_6gacv")
 
+[node name="Deathscreen" type="TextureRect" parent="."]
+visible = false
+z_index = 2
+layout_mode = 0
+offset_left = 1.0
+offset_right = 1150.0
+offset_bottom = 652.0
+texture = ExtResource("3_6gacv")
+expand_mode = 1
+
 [node name="Blackscreen" type="Panel" parent="."]
 visible = false
 top_level = true
@@ -143,17 +154,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6gacv")
 
-[node name="Deathscreen" type="TextureRect" parent="."]
-visible = false
-z_index = 2
-layout_mode = 0
-offset_left = 1.0
-offset_right = 1150.0
-offset_bottom = 652.0
-texture = ExtResource("3_6gacv")
-expand_mode = 1
-
 [node name="Background" type="TextureRect" parent="."]
+z_index = 1
 layout_mode = 1
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -161,6 +163,7 @@ texture = ExtResource("2_kiahg")
 expand_mode = 1
 script = ExtResource("5_647tb")
 boss = ExtResource("6_vkuus")
+stage2 = ExtResource("7_fjgeb")
 
 [node name="EnemyContainer" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(449, 449)
@@ -170,11 +173,13 @@ offset_right = 1150.0
 offset_bottom = 649.0
 
 [node name="Enemy" type="TextureRect" parent="EnemyContainer"]
+z_index = 1
 layout_mode = 2
 texture = ExtResource("4_3rw4r")
 expand_mode = 2
 
 [node name="PlayerPanel" type="Panel" parent="."]
+z_index = 2
 layout_mode = 0
 offset_left = 191.0
 offset_top = 412.0
@@ -183,20 +188,26 @@ offset_bottom = 653.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_7nr6w")
 
 [node name="PlayerData" type="VBoxContainer" parent="PlayerPanel"]
+z_index = 2
 layout_mode = 0
 offset_left = 1.0
 offset_right = 188.0
 offset_bottom = 243.0
 
 [node name="PlayerHPLabel" type="Label" parent="PlayerPanel/PlayerData"]
+z_index = 2
 layout_mode = 2
+theme_override_colors/font_color = Color(0.685733, 3.10443e-06, 5.77569e-07, 1)
 text = "HP: X/Y"
 
 [node name="PlayerEmbersLabel" type="Label" parent="PlayerPanel/PlayerData"]
+z_index = 2
 layout_mode = 2
+theme_override_colors/font_color = Color(2.31028e-06, 0.912486, 0.797405, 1)
 text = "Embers:X/Y"
 
 [node name="PlayerImage" type="TextureRect" parent="PlayerPanel/PlayerData"]
+z_index = 2
 layout_mode = 2
 texture = ExtResource("5_3rw4r")
 expand_mode = 4
@@ -204,12 +215,14 @@ script = ExtResource("8_cnkua")
 pfp = ExtResource("9_6kdea")
 
 [node name="ActionPanel" type="Panel" parent="."]
+z_index = 2
 layout_mode = 0
 offset_top = 412.0
 offset_right = 182.0
 offset_bottom = 652.0
 
 [node name="PlayerActions" type="VBoxContainer" parent="ActionPanel"]
+z_index = 2
 layout_mode = 0
 offset_left = 1.0
 offset_top = -1.0
@@ -217,6 +230,7 @@ offset_right = 182.0
 offset_bottom = 240.0
 
 [node name="Attack" type="Button" parent="ActionPanel/PlayerActions"]
+z_index = 2
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/hover = SubResource("StyleBoxTexture_6gacv")
@@ -224,6 +238,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_6gacv")
 text = "Attack"
 
 [node name="Block" type="Button" parent="ActionPanel/PlayerActions"]
+z_index = 2
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/hover = SubResource("StyleBoxTexture_5d35m")
@@ -231,6 +246,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_5d35m")
 text = "Dodge"
 
 [node name="Run" type="Button" parent="ActionPanel/PlayerActions"]
+z_index = 2
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/hover = SubResource("StyleBoxTexture_mjpwh")
@@ -248,6 +264,7 @@ offset_bottom = 652.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_3rw4r")
 
 [node name="Label" type="Label" parent="TextBox"]
+z_index = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -290,6 +307,8 @@ bus = &"Music"
 [node name="HitSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_iwv0x")
 bus = &"SFX"
+
+[node name="FinalBosstheme" type="AudioStreamPlayer" parent="."]
 
 [connection signal="draw" from="." to="." method="_on_draw"]
 [connection signal="enemy_dead" from="." to="." method="_on_enemy_dead"]

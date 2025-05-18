@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvyaxaankom43"
-path="res://.godot/imported/abyssGame.png-b89be8d68ee2d934026b3f500b850024.ctex"
+path="res://.godot/imported/abyssGame.png-b1a0c8b4cadbc1bd4f8f01cc03d0ee10.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Combat/Enemies/abyssGame.png"
-dest_files=["res://.godot/imported/abyssGame.png-b89be8d68ee2d934026b3f500b850024.ctex"]
+source_file="res://Assets/abyssGame.png"
+dest_files=["res://.godot/imported/abyssGame.png-b1a0c8b4cadbc1bd4f8f01cc03d0ee10.ctex"]
 
 [params]
 

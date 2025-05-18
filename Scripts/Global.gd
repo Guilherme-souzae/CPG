@@ -5,6 +5,7 @@ signal combat_start(enemy)
 signal combat_won(enemy)
 signal change_pfp
 signal final_boss
+signal stage_2
 
 var currentEnemy = null
 
@@ -23,3 +24,6 @@ func changePfp():
 	
 func signal_final_boss():
 	emit_signal("final_boss")
+	
+func signal_stage_2():
+	emit_signal("stage_2")

@@ -286,7 +286,21 @@ func specialActions(attackroll, hitchance):
 func _on_draw() -> void:
 	print("I entered the combat.")
 	$Deathscreen.hide()
-	$Blackscreen.show()
+	$PlayerPanel.hide()
+	$ActionPanel.hide()
+	
+	match (enemy.name):
+		"abismo":
+			Global.emit_signal("final_boss")
+		"centopeia":
+			Global.signal_stage_2()
+			$Blackscreen.show()
+		"perdido":
+			Global.signal_stage_2()
+			$Blackscreen.show()
+		"Gárgula":
+			Global.signal_stage_2()
+			$Blackscreen.show()
 	PlayerStats.update()
 	current_player_health = PlayerStats.current_health
 	current_player_embers = PlayerStats.current_embers
@@ -345,6 +359,11 @@ func musicPlayer():
 				$GargoylleBattletheme.stream_paused = false
 			else:
 				$GargoylleBattletheme.play()
+		"abismo":
+			if($FinalBosstheme.stream_paused):
+				$FinalBosstheme.stream_paused = false
+			else:
+				$FinalBosstheme.play()
 		_:
 			if ($GenericBattletheme.stream_paused):
 				$GenericBattletheme.stream_paused = false
@@ -362,6 +381,11 @@ func musicPause():
 		"Gárgula":
 			if(!$GargoylleBattletheme.stream_paused):
 				$GargoylleBattletheme.stream_paused = true
+		"abismo":
+			if(!$FinalBosstheme.stream_paused):
+				$FinalBosstheme.stream_paused = true
+			else:
+				$FinalBosstheme.play()
 		_:
 			if(!$GenericBattletheme.stream_paused):
 				$GenericBattletheme.stream_paused = true
