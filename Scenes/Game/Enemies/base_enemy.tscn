@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://by1yb4ycusxc7"]
+[gd_scene load_steps=6 format=3 uid="uid://by1yb4ycusxc7"]
 
 [ext_resource type="Texture2D" uid="uid://c7o3tyxwbdkq2" path="res://icon.svg" id="1_0w5if"]
 [ext_resource type="Script" uid="uid://cui2i06x4n5yv" path="res://Scripts/Game/base_enemy.gd" id="1_6fqhk"]
+[ext_resource type="Resource" uid="uid://cog0fbvu0kql3" path="res://Scenes/Combat/Enemies/bunny.tres" id="2_yhwkc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6fqhk"]
 radius = 239.015
@@ -11,6 +12,7 @@ size = Vector2(106, 105)
 
 [node name="BaseEnemy" type="CharacterBody2D"]
 script = ExtResource("1_6fqhk")
+enemyData = ExtResource("2_yhwkc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_0w5if")
