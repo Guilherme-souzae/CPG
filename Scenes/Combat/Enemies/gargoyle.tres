@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_eoof4")
-name = "O Gárgula"
+name = "Gárgula"
 introduction = "Esta estátua não é inofensiva"
 death = "A Gárgula se estilhaça..."
 hit = "Um soco lento e poderoso acerta sua perna."

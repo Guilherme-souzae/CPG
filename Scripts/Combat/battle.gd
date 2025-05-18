@@ -51,6 +51,10 @@ func _on_attack_pressed() -> void:
 	if (attackroll <= PlayerStats.margin):
 		$PlayerPanel.hide()
 		$ActionPanel.hide()
+		musicPause()
+		$HitSFX.play()
+		await $HitSFX.finished
+		musicPlayer()
 		$AnimationPlayer.play("enemy_damaged")
 		await $AnimationPlayer.animation_finished
 		display_text(enemy.crippled)
@@ -67,6 +71,10 @@ func _on_attack_pressed() -> void:
 	elif ( attackroll < PlayerStats.accuracy-enemy.evasion):
 		$PlayerPanel.hide()
 		$ActionPanel.hide()
+		musicPause()
+		$HitSFX.play()
+		await $HitSFX.finished
+		musicPlayer()
 		$AnimationPlayer.play("enemy_damaged")
 		await $AnimationPlayer.animation_finished
 		display_text(enemy.hurt)
@@ -275,6 +283,20 @@ func _on_draw() -> void:
 	setHealth(current_player_health, PlayerStats.max_health)
 	setEmbers(current_player_embers, PlayerStats.max_embers)
 	display_text(enemy.introduction)
+	
+	match enemy.name:
+		"centopeia":
+			$CentipedeSFX.play()
+			await $CentipedeSFX.finished
+		"perdido":
+			$ZombieSFX.play()
+			await $ZombieSFX.finished
+		"Gárgula":
+			$GargoylleIntroSFX.play()
+			await $GargoylleIntroSFX.finished
+			
+	musicPlayer()
+	
 	await textbox_closed
 	$Blackscreen.hide()
 	$PlayerPanel.show()
@@ -305,3 +327,30 @@ func _on_player_dead() -> void:
 	await textbox_closed
 	get_node("/root/Main").switch_to_game() #Placeholder
 	
+func musicPlayer():
+	match enemy.name:
+		"Gárgula":
+			if ($GargoylleBattletheme.stream_paused):
+				$GargoylleBattletheme.stream_paused = false
+			else:
+				$GargoylleBattletheme.play()
+		_:
+			if ($GenericBattletheme.stream_paused):
+				$GenericBattletheme.stream_paused = false
+			else:
+				$GenericBattletheme.play()
+
+
+
+func _on_hidden() -> void:
+	$GenericBattletheme.stop()
+	$GargoylleBattletheme.stop()
+
+func musicPause():
+	match enemy.name:
+		"Gárgula":
+			if(!$GargoylleBattletheme.stream_paused):
+				$GargoylleBattletheme.stream_paused = true
+		_:
+			if(!$GenericBattletheme.stream_paused):
+				$GenericBattletheme.stream_paused = true

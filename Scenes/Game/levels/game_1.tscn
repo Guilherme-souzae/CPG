@@ -387,6 +387,7 @@ tile_map_data = PackedByteArray("AAAFAAYAAAAGAAIAAAAGAAYAAAAIAAIAAAAFAAUAAAAGAAE
 tile_set = SubResource("TileSet_a5nnn")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." index="5"]
+visible = false
 color = Color(0.0386665, 0.0239279, 0.0433915, 1)
 
 [node name="Archup" type="Sprite2D" parent="." index="6"]

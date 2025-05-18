@@ -6,6 +6,7 @@ var player_in_range := false
 
 @onready var area_detection = $Area2D  # Referência ao nó Area2D
 @onready var detection_shape = $Area2D/DetectionShape2D  # CollisionShape2D da área
+@onready var game_node = get_node("/root/Main/Game")
 
 func _ready():
 	# Conecta os sinais manualmente (caso não estejam conectados no editor)
@@ -17,7 +18,6 @@ func _process(delta):
 		interact()
 		
 func interact():
-	var game_node = get_node("/root/Main/Game")
 	game_node.show_message(frase, 2.5)
 	print("Objeto interagido")
 	

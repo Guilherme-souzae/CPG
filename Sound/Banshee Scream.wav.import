@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bosn7tjb54esn"
+path="res://.godot/imported/Banshee Scream.wav-8c234384e7d614a5b73ba6274edd9dbb.sample"
+
+[deps]
+
+source_file="res://Sound/Banshee Scream.wav"
+dest_files=["res://.godot/imported/Banshee Scream.wav-8c234384e7d614a5b73ba6274edd9dbb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
