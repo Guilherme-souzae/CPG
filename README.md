@@ -13,7 +13,7 @@
 <p><img src="https://raw.githubusercontent.com/Guilherme-souzae/CPG/main/JustForTheReadme/TheHermit.png" width="30" height="54" alt="hermit">𝔗𝔥𝔢 𝔥𝔢𝔯𝔪𝔦𝔱</p>
 <p><img src="https://raw.githubusercontent.com/Guilherme-souzae/CPG/main/JustForTheReadme/TheChariot.png" width="52" height="60" alt="chariot">𝔗𝔥𝔢 𝔠𝔥𝔞𝔯𝔦𝔬𝔱</p>
 <p><img src="https://raw.githubusercontent.com/Guilherme-souzae/CPG/main/JustForTheReadme/TheTower.png" alt="tower">𝔗𝔥𝔢 𝔱𝔬𝔴𝔢𝔯</p>
-<p><img src="https://raw.githubusercontent.com/Guilherme-souzae/CPG/main/JustForTheReadme/TheWorld.png" width="60" height="28" alt="world">T̴͋̽h̸͗̑e̸͌̕ ̶͗̀w̷̓͘o̵̎͐r̴̂̕l̷͆̚d̸͑͗</p>
+<p><img src="https://raw.githubusercontent.com/Guilherme-souzae/CPG/main/JustForTheReadme/TheWorld.png" width="60" height="28" alt="world">T̷̛̞̙̮͎̮̊̏̕͘̕ͅh̶̲̰͒ě̸̢̧̻̫̙̙̜͂͌͗͛ ̴̡̢͉͖̠̏̏̀͘ͅw̶͔͚̪͙̩͇̙̿̀͆̋̽̀ö̷̡̯͈̤͎̘̼́͒̓̆̚r̷̜̻̗̿ͅl̷͉̻̲̣͍̞͒̇̕̕͝d̶̩͙͙͙͇̗͗͂̍̉</p>
 
 <h2>𝔇𝔢𝔭𝔦𝔠𝔱𝔦𝔬𝔫𝔰</h2>
 <img src="https://raw.githubusercontent.com/Guilherme-souzae/CPG/main/JustForTheReadme/Overworld.png" alt="exploration">
